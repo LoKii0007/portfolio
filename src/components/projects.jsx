@@ -14,6 +14,7 @@ function Projects() {
     pinnedSections.forEach((section, index, sections) => {
 
       let pinHeight = section.offsetHeight
+      let img =  section.querySelector('img')
 
       gsap.to(section, {
         scrollTrigger: {
@@ -26,7 +27,7 @@ function Projects() {
         }
       })
 
-      gsap.to(section, {
+      gsap.to(img, {
         scale: 0.5,
         scrollTrigger: {
           trigger: section,
