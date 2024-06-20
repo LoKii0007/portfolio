@@ -9,7 +9,7 @@ import { Model } from '../models/Iron';
 
 const Portfolio = () => {
 
-    gsap.registerPlugin(SplitText);
+    // gsap.registerPlugin(SplitText);
 
     useEffect(() => {
 
