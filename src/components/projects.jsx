@@ -14,6 +14,7 @@ function Projects() {
     pinnedSections.forEach((section, index, sections) => {
 
       let pinHeight = section.offsetHeight
+      console.log('pin Height', pinHeight)
       let img =  section.querySelector('img')
 
       gsap.to(section, {
