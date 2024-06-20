@@ -4,7 +4,10 @@
     position: relative;
 }
 
-
+.work-project, .personal-project{
+    font-size: 48px;
+    font-weight: 700;
+}
 
 .pr-1 img{
     z-index: 100;
@@ -14,8 +17,4 @@
 }
 .pr-scroll img{
     z-index: 120;
-}
-
-.footer{
-    height: 50vh;
 }

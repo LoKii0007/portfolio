@@ -1,7 +1,68 @@
-.canvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80vw;
+.techstack{
     height: 100vh;
+    width: 100vw;
+}
+
+.stack{
+    font-size: 32px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    font-weight: 600;
+    border: 2px solid black;
+    z-index: 900;
+}
+
+.scaling{
+    height: 150px;
+    width: 50px;
+    border: 2px solid white;
+    background-color: rgb(94, 161, 248);
+}
+
+.skills{
+    z-index: 800;
+    width: 100%;
+}
+
+
+/* vertical  */
+.prometheus img, .redis img{
+    animation: hover 2s ease-in-out infinite;
+}
+.next img, .grafana img{
+    animation: hover 3s ease-in-out infinite;
+}
+.react img{
+    animation: hover 3s ease-in-out infinite 1s;
+}
+.node img, .docker img{
+    animation: hover 3s ease-in-out infinite 2s;
+}
+.grafana img{
+    animation: hover 4s ease-in-out infinite;
+}
+.gsap img{
+    animation: hover 4s ease-in-out infinite 1s;
+}
+
+/* horizonatl  */
+.express img{
+    animation: hover-horizontal 3s ease-in-out infinite 2s;
+}
+.scaling{
+    animation: hover-horizontal 3s ease-in-out infinite;
+}
+
+.icon-img{
+    height: 60px;
+    transition: .3s ease-out;
+}
+
+.icon-img:hover{
+    scale: 1.2;
+    transition: .3s ease;
+}
+
+.frontend{
+    width: 50%;
 }

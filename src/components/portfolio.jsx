@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-// import SplitText from 'gsap-trial/SplitText';
 import gsap from 'gsap';
 import '../css/portfolio.css'
 import { Canvas } from '@react-three/fiber';
@@ -57,7 +56,6 @@ const Portfolio = () => {
                             <Stage enviornment='city' >
                                 <Model/>
                             </Stage>
-
                         </Canvas>
                     </div>
                     {/* <img src="portfolio1.png" alt="" /> */}

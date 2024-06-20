@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/all"
-import "./index.css"
 import Footer from "./components/footer"
+import "./index.css"
+import './css/common.css'
 
 function App() {
 

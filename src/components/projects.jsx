@@ -17,7 +17,7 @@ function Projects() {
 
       img.onload = ()=>{
         let pinHeight = section.offsetHeight
-        console.log('pin Height', pinHeight)
+        // console.log('pin Height', pinHeight)
 
         gsap.to(section, {
           scrollTrigger: {
@@ -48,7 +48,7 @@ function Projects() {
   return (
     <>
       <div className="projects d-flex flex-column justify-content-center align-items-center">
-        <div className="work-project">
+        <div className="work-project py-5">
           Work
         </div>
 
@@ -56,7 +56,7 @@ function Projects() {
           <img className='img' src="/fotf.png" alt="" />
         </div>
 
-        <div className="personal-project">
+        <div className="personal-project py-5">
           Personal Projects
         </div>
 

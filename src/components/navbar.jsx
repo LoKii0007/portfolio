@@ -25,37 +25,42 @@ const Navbar = () => {
             <div className=''>
                 <div className={`custom-navbar d-flex justify-content-between align-items-center `} >
                     <div className={`navbar-left ms-5 d-flex flex-row `}>
-                        <div className="logo-name nav-items">
-                            <Link to="/" className="nav-items">Portfolio</Link>
-                        </div>
+                        <Link to="/" className="nav-item px-3 py-1">Portfolio</Link>
                     </div>
                     <div className={`navbar-right me-5 d-flex flex-row `}>
-                        <div id='cross' className="menu d-flex flex-column justify-content-center align-items-center">
-                            <div className='menu-line'></div>
-                            <div className='menu-line my-2'></div>
-                            <div className='menu-line'></div>
-                        </div>
-                        <div className="nav-items mx-1">
-                            <Link to="/" className="nav-items">Home</Link>
-                        </div>
-                        <div className="nav-items mx-3">
-                            <Link to="/about" className="nav-items">About</Link>
-                        </div>
-                        <div className="nav-items mx-3">
-                            <Link to="/" className="nav-items">Tech</Link>
-                        </div>
-                        <div className="nav-items mx-3">
-                            <Link to="/" className="nav-items">Contact</Link>
-                        </div>
-                        <div id='menu1' className="menu d-flex flex-column justify-content-center align-items-center">
-                            <div className='menu-line'></div>
-                            <div className='menu-line my-2'></div>
-                            <div className='menu-line'></div>
+                        <Link to="/" className="nav-item px-3 py-1">Home</Link>
+                        <Link to="/projects" className="nav-item px-3 py-1">Projects</Link>
+                        <Link to="/about" className="nav-item px-3 py-1">TechStack</Link>
+                        <Link to="/about" className="nav-item px-3 py-1">Contact</Link>
+                        <div data-bs-toggle="offcanvas" href="#offcanvasExample" aria-controls="offcanvasExample" className="menu">
+                            ...
                         </div>
                     </div>
                 </div>
                 <div className={`line`}></div>
 
+            </div>
+
+            <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div className="offcanvas-header">
+                    <h5 className="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                    </div>
+                    <div className="dropdown mt-3">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Dropdown button
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" href="#">Action</a></li>
+                            <li><a className="dropdown-item" href="#">Another action</a></li>
+                            <li><a className="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </>
     )

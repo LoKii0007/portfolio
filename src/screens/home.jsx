@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <>
       <Portfolio/>
-      <Projects/>
       {/* <Tech/> */}
-      {/* <TechStack></TechStack> */}
+      <TechStack/>
+      <Projects/>
     </>
   )
 }

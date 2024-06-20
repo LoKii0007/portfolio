@@ -19,29 +19,36 @@ function Tech() {
       var engine = Engine.create(),
         world = engine.world;
 
-      // create renderer
+      // creating renderer
       var render = Render.create({
-        // element: document.getElementById('matter'),
-        element: document.body,
+        element: document.getElementById('matter'),
+        // element: document.body,
         engine: engine,
         options: {
           width: 800,
           height: 600,
-          showAngleIndicator: true,
+          showAngleIndicator: false,
           wireframes: false
         }
       });
-
       Render.run(render);
 
       // create runner
       var runner = Runner.create();
       Runner.run(runner, engine);
 
-      // add bodies
-      var stack = Composites.stack(100, 600 - 21 - 20 * 20, 10, 10, 20, 0, function (x, y) {
-        return Bodies.circle(x, y, 20);
-      });
+      // adding bodies
+      var hello = Bodies.rectangle(500, 400, 200, 200,{
+        render:{
+          sprite:{
+            texture:'/try.png',
+          },
+          chamfer: {
+            radius: 20 // adjust the radius value to control the corner rounding
+          }
+        }
+      })
+
 
       Composite.add(world, [
         // walls
@@ -49,7 +56,8 @@ function Tech() {
         Bodies.rectangle(400, 600, 800, 50, { isStatic: true }),
         Bodies.rectangle(800, 300, 50, 600, { isStatic: true }),
         Bodies.rectangle(0, 300, 50, 600, { isStatic: true }),
-        stack
+        // inside walls
+        hello
       ]);
 
       // add mouse control
