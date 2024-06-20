@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import SplitText from 'gsap-trial/SplitText';
+// import SplitText from 'gsap-trial/SplitText';
 import gsap from 'gsap';
 import '../css/portfolio.css'
 import { Canvas } from '@react-three/fiber';
@@ -13,24 +13,24 @@ const Portfolio = () => {
 
     useEffect(() => {
 
-        var split = new SplitText("#portfolio-desc", { type: "chars, words" })
+        // var split = new SplitText("#portfolio-desc", { type: "chars, words" })
 
-        gsap.from(split.chars, {
-            duration: .3,
-            y: -30,
-            autoAlpha: 0,
-            stagger: 0.03,
-            ease: "back",
-            delay: .2,
-            opacity: 1,
-        })
+        // gsap.from(split.chars, {
+        //     duration: .3,
+        //     y: -30,
+        //     autoAlpha: 0,
+        //     stagger: 0.03,
+        //     ease: "back",
+        //     delay: .2,
+        //     opacity: 1,
+        // })
 
-        gsap.to(".portfolio-img", {
-            y: 0,
-            duration: 1,
-            ease: "back",
-            opacity: 1
-        })
+        // gsap.to(".portfolio-img", {
+        //     y: 0,
+        //     duration: 1,
+        //     ease: "back",
+        //     opacity: 1
+        // })
     }, [])
 
     return (
