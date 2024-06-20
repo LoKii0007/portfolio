@@ -1,0 +1,16 @@
+.tech {
+  display: flex;
+  overflow-x: hidden;
+  height: 100vh;
+  /* background-color: whitesmoke; */
+}
+
+.tech-name {
+  flex: 0 0 auto;
+  color: #242424;
+  z-index: 200;
+  width: 400px;
+  height: 400px;
+}
+
+

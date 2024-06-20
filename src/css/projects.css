@@ -1,0 +1,21 @@
+
+.pr img{
+    width: 1400px;
+    position: relative;
+}
+
+
+
+.pr-1 img{
+    z-index: 100;
+}
+.pr-2 img{
+    z-index: 110;
+}
+.pr-scroll img{
+    z-index: 120;
+}
+
+.footer{
+    height: 50vh;
+}

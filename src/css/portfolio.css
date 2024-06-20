@@ -1,0 +1,116 @@
+.portfolio{
+    height: 90vh;
+    transition: .5s ease;
+    overflow: hidden;
+    width: 100vw;
+}
+
+#portfolio-desc{
+    text-transform: uppercase;
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+    font-size: 70px;
+    font-weight: 700;
+    transition: .5s ease;
+}
+
+.portfolio-desc:hover{
+    cursor:default;
+}
+
+#portfolio-desc::before{
+    content: attr(data-text);
+    width: 0;
+    left: 0;
+    position: absolute;
+    color: black;
+    overflow: hidden;
+    transition:all .3s ease-out;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+#portfolio-desc:hover::before{
+    width: 100%;
+    transition:all .5s linear;
+}
+
+.name{
+    color: transparent;
+    -webkit-text-stroke: 1px red;
+}
+
+.name::before{
+    color: aqua;
+    z-index: 20;
+}
+
+.portfolio-img{
+    transform: translateY(-500px);
+    /* transition: .5s ease; */
+    opacity: 0;
+}
+
+.portfolio-right img{
+    height: 400px;
+    border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid black;
+    z-index: 100;
+}
+
+/* .model{
+    height: 150%;
+    width: 150%;
+} */
+
+
+/* -----------media query------------ */
+
+@media screen and (max-width:1100px) and (min-width:800px) {
+    .portfolio-desc{
+        font-size:50px;
+        transition: .5s ease;
+    }
+    .portfolio-img img{
+        height: 300px;
+        transition: .5s ease;
+    }
+}
+
+@media screen and (max-width:800px) and (min-width:600px) {
+    .portfolio-desc{
+        font-size:50px;
+        transition: .5s ease;
+    }
+    .portfolio-img img{
+        height: 300px;
+        transition: .5s ease;
+    }
+    .portfolio{
+        display: flex !important;
+        flex-direction: column !important;
+        transition: .5s ease;
+        justify-content: space-evenly !important;
+
+    }
+}
+
+@media screen and (max-width:600px) and (min-width:300px) {
+    .portfolio-desc{
+        font-size:40px;
+        transition: .5s ease;
+    }
+    .portfolio-img img{
+        height: 250px;
+        transition: .5s ease;
+    }
+    .portfolio{
+        display: flex !important;
+        flex-direction: column !important;
+        transition: .5s ease;
+        justify-content: space-evenly !important;
+
+    }
+}

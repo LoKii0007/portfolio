@@ -1,0 +1,18 @@
+body {
+  background-color: #ffffff;
+  transition: 1s ease;
+  font-family: "Raleway", sans-serif;
+  width: 100vw;
+}
+::-webkit-scrollbar {
+  width: 1vh; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(136, 136, 136); /* Set the color of the thumb */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff; /* Set the color of the track */
+}
