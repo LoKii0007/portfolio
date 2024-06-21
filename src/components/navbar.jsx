@@ -34,14 +34,14 @@ const Navbar = () => {
             <div className=''>
                 <div className={`custom-navbar d-flex justify-content-between align-items-center `} >
                     <div className={`navbar-left nav-items ms-5 d-flex flex-row justify-content-center align-items-center`}>
-                        <Link to="/" className="nav-item px-3 py-1">Portfolio</Link>
+                        <Link to="/" className="logo px-3 py-1">Portfolio</Link>
                     </div>
                     <div className={`navbar-right nav-items me-5 d-flex flex-row justify-content-center align-items-center`}>
                         <Link to="/" className="nav-item px-3 py-1">Home</Link>
                         <Link to="/projects" className="nav-item px-3 py-1">Projects</Link>
                         <Link to="/about" className="nav-item px-3 py-1">TechStack</Link>
                         <Link to="/about" className="nav-item px-3 py-1">Contact</Link>
-                        <div data-bs-toggle="offcanvas" href="#menu" aria-controls="menu nav-item" className="menu px-3 py-1">
+                        <div data-bs-toggle="offcanvas" href="#menu" aria-controls="menu" className="menu px-3 py-1">
                             <i className="bi bi-list"></i>
                         </div>
                     </div>
@@ -49,15 +49,23 @@ const Navbar = () => {
             </div>
 
             <div className="offcanvas offcanvas-end d-flex flex-column align-items-center" tabIndex="-1" id="menu" aria-labelledby="menuLabel">
-                <div className="offcanvas-header">
-                    {/* <h5 className="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5> */}
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div className="offcanvas-body d-flex flex-column justify-content-start align-items-center">
-                    <Link to="/" className="menu-item px-3 py-1">Home</Link>
-                    <Link to="/projects" className="menu-item px-3 py-1">Projects</Link>
-                    <Link to="/about" className="menu-item px-3 py-1">TechStack</Link>
-                    <Link to="/about" className="menu-item px-3 py-1">Contact</Link>
+                <div className="offcanvas-body d-flex flex-column align-items-end">
+                    <Link to="/" className="menu-item d-flex px-3 py-1" data-bs-dismiss="offcanvas" aria-label="Close">
+                        Home
+                        <i className="bi bi-list ps-3"></i>
+                    </Link>
+                    <Link to="/projects" className="menu-item px-3 py-1"  data-bs-dismiss="offcanvas" aria-label="Close">
+                        Projects
+                        <i className="bi bi-card-list ps-3"></i>
+                    </Link>
+                    <Link to="/about" className="menu-item px-3 py-1"  data-bs-dismiss="offcanvas" aria-label="Close">
+                        TechStack
+                        <i className="bi bi-stack ps-3"></i>
+                    </Link>
+                    <Link to="/about" className="menu-item px-3 py-1"  data-bs-dismiss="offcanvas" aria-label="Close">
+                        Contact
+                        <i className="bi bi-person-lines-fill ps-3"></i>
+                    </Link>
                 </div>
             </div>
         </>
