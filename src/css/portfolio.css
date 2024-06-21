@@ -37,8 +37,8 @@
 }
 
 .name{
-    color: transparent;
-    -webkit-text-stroke: 1px red;
+    color: aqua;
+    -webkit-text-stroke: 0px;
 }
 
 .name::before{

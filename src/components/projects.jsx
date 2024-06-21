@@ -48,26 +48,26 @@ function Projects() {
   return (
     <>
       <div className="projects d-flex flex-column justify-content-center align-items-center">
-        <div className="work-project py-5">
+        <div className="work-project pt-5">
           Work
         </div>
 
-        <div className="pinned pr pr-1">
+        <div className="pinned pr wr pr-1 py-5">
           <img className='img' src="/fotf.png" alt="" />
         </div>
 
-        <div className="personal-project py-5">
+        <div className="personal-project">
           Personal Projects
         </div>
 
-        <div className="pinned pr pr-2">
+        <div className="pinned pr pr-2 py-5">
+          <img className='img' src="/wechat.png" alt="" />
+        </div>
+        <div className="pinned pr pr-3 py-5">
           <img className='img' src="/ydmc.png" alt="" />
         </div>
-        <div className="pinned pr pr-3">
-          <img className='img' src="/ydmc.png" alt="" />
-        </div>
-        <div className="scroll pr pr-4">
-          <img className='img' src="/ydmc.png" alt="" />
+        <div className="scroll pr pr-4 py-5">
+          <img className='img' src="/savor.png" alt="" />
         </div>
       </div>
     </>

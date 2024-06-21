@@ -91,7 +91,7 @@ function TechStack() {
               <img className='icon-img' src="/grafana.png" alt="" />
             </div>
             <div className="scaling dev mx-5">
-              scaling
+              
             </div>
           </div>
         </div>

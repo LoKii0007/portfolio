@@ -50,7 +50,9 @@
     animation: hover-horizontal 3s ease-in-out infinite 2s;
 }
 .scaling{
-    animation: hover-horizontal 3s ease-in-out infinite;
+    /* animation: hover-horizontal 3s ease-in-out infinite; */
+    animation: scale 3s ease-in-out infinite;
+    transform-origin: center top;
 }
 
 .icon-img{
@@ -61,8 +63,9 @@
 .icon-img:hover{
     scale: 1.2;
     transition: .3s ease;
+    content: 'tech';
 }
 
-.frontend{
+.frontend, .backend, .devops{
     width: 50%;
 }

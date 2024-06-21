@@ -3,14 +3,26 @@
     height: 10vh;
     width: 100vw;
     transition: .5s ease ;
+    transform: translateY(-10vh);
+    border-bottom: 10vh solid black;
 }
 
 .nav-items{
     font-size: 3vh;
+    transform: translateY(20px);
+    opacity: 0;
 }
 
-.nav-item:hover{
-    /* color: white; */
+.menu{
+    cursor: pointer;;
+}
+.menu-item{
+    font-size: 3vh;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:hover, .menu-item:hover{
     background-color: rgba(0, 0, 0, 0.311);
     transition: .5s ease;
     border-radius: 10px;
@@ -28,18 +40,6 @@
 
 .logo-name, .nav-items{
     transform: translateY(4vh);
-}
-
-.line{
-    background-color: black;
-    height: 3px;
-    width: 100%;
-    transform: translateX(-100%);
-    transition: .5s ease ;
-}
-
-.line:hover{
-    transform: rotateX(-30deg);
 }
 
 /* ------------------media queries------------ */
