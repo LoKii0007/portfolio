@@ -1,4 +1,64 @@
 .contact{
+    width: 100vw;
     height: 100vh;
-    background-color: #242424;
+    padding: 32px 10%;
+    /* background-color: white !important; */
+}
+
+.contact-left, .contact-right{
+    width: 49%;
+    height: 100%;
+}
+.contact-left{
+    background-color: white !important;
+}
+
+.contact-img, .contact-info{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.contact-img{
+    margin-bottom: 2vh;
+    background-color: rgb(73, 183, 223);
+}
+
+.contact-img img{
+    height: 400px;
+    width: fit-content;
+}
+
+.touch{
+    color: rgb(73, 183, 223);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.chat{
+    font-size: 32px;
+    color: black;
+    font-weight: 600;
+}
+
+.form-control{
+    border: none !important;
+    background-color: rgba(0, 0, 0, 0.08);
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+textarea{
+    height: 200px;
+}
+
+.form-label{
+    font-weight: 500;
+}
+
+.contact-info{
+    height: 100%;
+}
+.email, .mobile{
+    background-color: rgba(0, 0, 0, 0.08);
+    background-color: whitesmoke;
+    width: 95%;
 }

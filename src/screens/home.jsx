@@ -4,6 +4,7 @@ import '../css/home.css'
 import Projects from '../components/projects'
 import Tech from '../components/tech'
 import TechStack from '../components/techstack'
+import ContactForm from '../components/contact'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       {/* <Tech/> */}
       <TechStack/>
       <Projects/>
+      <ContactForm/>
     </>
   )
 }

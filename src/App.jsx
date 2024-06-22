@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/all"
 import Footer from "./components/footer"
 import "./index.css"
 import './css/common.css'
+import ContactForm from "./components/contact"
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/contact" element={<ContactForm/>}></Route>
         </Routes>
         <Footer/>
       </Router>

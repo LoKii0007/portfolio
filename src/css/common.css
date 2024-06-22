@@ -23,3 +23,19 @@
         height: 70px;
     }
 }
+
+.common-btn{
+    padding: 10px 48px !important;
+    color: rgb(73, 183, 223);
+    background-color: white;
+    border-radius: 32px;
+    border: 2px solid rgb(73, 183, 223);
+}
+
+.common-btn-2{
+    padding: 10px 48px !important;
+    color: white;
+    background-color: rgb(73, 183, 223);
+    border-radius: 32px;
+    border: 2px solid rgb(73, 183, 223, 0.2);
+}
