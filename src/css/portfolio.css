@@ -60,12 +60,6 @@
     z-index: 100;
 }
 
-.model{
-    height: 150%;
-    width: 150%;
-}
-
-
 /* -----------media query------------ */
 
 @media screen and (max-width:1100px) and (min-width:800px) {

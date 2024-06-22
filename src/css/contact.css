@@ -17,9 +17,16 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
 }
+
+.model{
+    height: 100%;
+    width: 100%;
+}
 .contact-img{
     margin-bottom: 2vh;
     background-color: rgb(73, 183, 223);
+    background-color: white;
+    height: 100%;
 }
 
 .contact-img img{
@@ -41,13 +48,18 @@
 
 .form-control{
     border: none !important;
-    background-color: rgba(0, 0, 0, 0.08);
     background-color: whitesmoke;
     border-radius: 10px;
 }
+.form-control-2{
+    border: none !important;
+    border-radius: 0px !important;
+    border-bottom: 2px solid rgb(73, 183, 223) !important;
+}
 
 textarea{
-    height: 200px;
+    max-height: 200px !important;
+    min-height: 150px !important;
 }
 
 .form-label{
@@ -58,7 +70,6 @@ textarea{
     height: 100%;
 }
 .email, .mobile{
-    background-color: rgba(0, 0, 0, 0.08);
     background-color: whitesmoke;
     width: 95%;
 }
