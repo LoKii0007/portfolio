@@ -44,8 +44,8 @@ export default function ContactForm() {
   return (
     <>
       <div className="contact d-flex justify-content-between align-items-center">
-        <div className="contact-left p-5 rounded-5 position-relative">
-          <div className="mobile-model position-absolute ">
+        <div className="contact-left p-5 rounded-5 ">
+          <div className="mobile-model">
             <Canvas camera={{ fov: 16, position: [0, 10, 12] }} >
               <OrbitControls enableZoom={false} autoRotate={false} />
               <ambientLight intensity={1} />
