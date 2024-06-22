@@ -1,0 +1,39 @@
+.home{
+    width: 100vw;
+    height: 100vh;
+}
+
+.home-left{
+    width: 65vw;
+    background-color: beige;
+}
+.home-right{
+    width: 35vw;
+    background-color: #2D9596;
+}
+
+.home-right img{
+    transform: translateX(-35%);
+    height: 65vh;
+}
+
+.desc-1{
+    color: orange;
+    font-weight: 600;
+}
+.desc-2{
+    color: black;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 80px;
+}
+.desc-3{
+    color: black;
+    font-weight: 700;
+}
+
+.shop-btn{
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}

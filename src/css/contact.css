@@ -73,3 +73,41 @@ textarea{
     background-color: whitesmoke;
     width: 95%;
 }
+
+.mobile-model{
+    display: none;
+}
+
+
+@media screen and (max-width:600px) {
+    .contact-right{
+        display: none !important;
+    }
+    .contact{
+        padding-left: 0% !important;
+        border-top-left-radius: 0% !important;
+        border-bottom-left-radius: 0% !important;
+    }
+    .contact-left{
+        width: 100%;
+        border-top-left-radius: 0% !important;
+        border-bottom-left-radius: 0% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        border-right:2px solid rgb(73, 183, 223) ;
+        box-shadow: rgba(73, 183, 223, 0.15) 0px 15px 25px, rgba(73, 183, 223, 0.05) 0px 5px 10px;
+    }
+    .mobile-model{
+        display: block !important;
+        top: 16px !important;
+        width: 100%;
+    }
+    .contact-top{
+        margin-top: 48px !important;
+    }
+    .contact-top, .contact-bottom{
+        width: 100% ;
+    }
+}
