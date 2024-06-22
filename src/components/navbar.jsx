@@ -40,7 +40,7 @@ const Navbar = () => {
                         <Link to="/" className="nav-item px-3 py-1">Home</Link>
                         <Link to="/projects" className="nav-item px-3 py-1">Projects</Link>
                         <Link to="/about" className="nav-item px-3 py-1">TechStack</Link>
-                        <Link to="/about" className="nav-item px-3 py-1">Contact</Link>
+                        <Link to="/contact" className="nav-item px-3 py-1">Contact</Link>
                         <div data-bs-toggle="offcanvas" href="#menu" aria-controls="menu" className="menu px-3 py-1">
                             <i className="bi bi-list"></i>
                         </div>
