@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/projects.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -6,18 +6,17 @@ import { ScrollTrigger } from 'gsap/all'
 function Projects() {
 
   gsap.registerPlugin(ScrollTrigger)
+  const [img, setImg] = useState(false)
 
   useEffect(() => {
 
     const pinnedSections = gsap.utils.toArray('.pinned')
-
     pinnedSections.forEach((section, index, sections) => {
 
       let img =  section.querySelector('img')
 
       img.onload = ()=>{
         let pinHeight = section.offsetHeight
-        // console.log('pin Height', pinHeight)
 
         gsap.to(section, {
           scrollTrigger: {
@@ -43,6 +42,20 @@ function Projects() {
       }
 
     })
+
+    function responsive(){
+      if(window.innerWidth <600 ){
+           setImg(true)
+      }else{
+        setImg(false)
+      }
+    }
+    responsive()
+    window.addEventListener('resize', responsive)
+    return()=>{
+      window.removeEventListener('resize', responsive)
+    }
+
   }, [])
 
   return (
@@ -53,7 +66,7 @@ function Projects() {
         </div>
 
         <div className="pinned pr wr pr-1 py-5">
-          <img className='img' src="/fotf.png" alt="" />
+          <img className='img' src={`/${img?'fotf-600.jpg':'fotf.png'}`} alt="" />
         </div>
 
         <div className="personal-project">
@@ -61,13 +74,13 @@ function Projects() {
         </div>
 
         <div className="pinned pr pr-2 py-5">
-          <img className='img' src="/wechat.png" alt="" />
+          <img className='img' src={`/wechat.png`} alt="" />
         </div>
         <div className="pinned pr pr-3 py-5">
-          <img className='img' src="/ydmc.png" alt="" />
+          <img className='img' src={`/ydmc.png`} alt="" />
         </div>
         <div className="scroll pr pr-4 py-5">
-          <img className='img' src="/savor.png" alt="" />
+          <img className='img' src={`/savor.png`} alt="" />
         </div>
       </div>
     </>

@@ -49,7 +49,7 @@ const Navbar = () => {
             </div>
 
             <div className="offcanvas offcanvas-end d-flex flex-column align-items-center" tabIndex="-1" id="menu" aria-labelledby="menuLabel">
-                <div className="offcanvas-body d-flex flex-column align-items-end">
+                <div className="offcanvas-body pe-3 pt-4 d-flex flex-column align-items-end">
                     <Link to="/" className="menu-item d-flex px-3 py-1" data-bs-dismiss="offcanvas" aria-label="Close">
                         Home
                         <i className="bi bi-list ps-3"></i>

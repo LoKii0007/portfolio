@@ -6,6 +6,7 @@
     width: 1100px;
     position: relative;
     border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 25px;
 }
 
 .work-project, .personal-project{

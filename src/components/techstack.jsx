@@ -49,7 +49,7 @@ function TechStack() {
           MY TECHSTACK
         </div>
         <div className="skills position-absolute d-flex flex-column align-items-center justify-content-center">
-          <div className="frontend d-flex justify-content-evenly">
+          <div className="frontend d-flex justify-content-evenly align-items-center">
             <div className="next front mx-5">
               <img className='icon-img' src="/next.png" alt="" />
             </div>
