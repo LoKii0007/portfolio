@@ -9,6 +9,7 @@ import Footer from "./components/footer"
 import "./index.css"
 import './css/common.css'
 import ContactForm from "./components/contact"
+import { Toaster } from "react-hot-toast"
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/contact" element={<ContactForm/>}></Route>
         </Routes>
         <Footer/>
+        <Toaster/>
       </Router>
     </>
   )

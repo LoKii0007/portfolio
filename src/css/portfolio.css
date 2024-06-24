@@ -87,7 +87,6 @@
         flex-direction: column !important;
         transition: .5s ease;
         justify-content: space-evenly !important;
-
     }
 }
 
@@ -95,6 +94,7 @@
     #portfolio-desc{
         font-size:42px;
         transition: .5s ease;
+        /* color: black !important; */
     }
     .portfolio-img img{
         height: 250px;
@@ -105,6 +105,6 @@
         flex-direction: column !important;
         transition: .5s ease;
         justify-content: space-evenly !important;
-
     }
+
 }

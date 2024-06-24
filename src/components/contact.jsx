@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react'
 import "../css/contact.css"
-import { KeyboardMini } from '../models/Key-mini'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stage } from '@react-three/drei';
-import { Mechanical } from '../models/Mechanical';
+import { OrbitControls } from '@react-three/drei';
 import { Keyboard } from '../models/Keyboard';
+import { ContactFormApi } from '../api/conatctformapi';
+import toast from 'react-hot-toast';
 
 export default function ContactForm() {
-
   const [isTyping, setIsTyping] = useState(false)
   const typingTimeoutRef = useRef(null)
   const [formData, setFormData] = useState({
@@ -41,6 +40,17 @@ export default function ContactForm() {
     }
   }, [])
 
+  async function handleSubmit(){
+    e.preventDefault()
+    const res = await ContactFormApi(data)
+    console.log(res)
+    if(res !== undefined){
+      toast.success('message sent successfully')
+    }else{
+      toast.error('some error occured')
+    }
+  }
+
   return (
     <>
       <div className="contact d-flex justify-content-between align-items-center">
@@ -66,19 +76,19 @@ export default function ContactForm() {
             <form action="" type="submit" className='contact-form'>
               <div className=" d-flex flex-column ">
                 <label htmlFor="name" className="custom-form align-items-start d-flex form-label">Name</label>
-                <input type="name" onChange={(e) => handleData(e)} value={formData.name} name='name' className="contact-name form-control" id="name" placeholder='someone' />
+                <input type="name" required={true} onChange={(e) => handleData(e)} value={formData.name} name='name' className="contact-name form-control" id="name" placeholder='someone' />
               </div>
               <div className="my-3 d-flex flex-column">
                 <label htmlFor="Email" className="custom-form align-items-start d-flex form-label ">Email</label>
-                <input type="email" onChange={(e) => handleData(e)} value={formData.email} name='email' className="contact-email form-control" id="email" placeholder='someone@gmail.com' />
+                <input type="email" required={true} onChange={(e) => handleData(e)} value={formData.email} name='email' className="contact-email form-control" id="email" placeholder='someone@gmail.com' />
               </div>
               <div className=" d-flex flex-column">
                 <label htmlFor="message" className="custom-form align-items-start d-flex form-label ">Message</label>
-                <textarea type="text" onChange={(e) => handleData(e)} value={formData.message} name='message' placeholder='Leave a message' className="contact-message form-control" id="message" />
+                <textarea type="text" required={true} onChange={(e) => handleData(e)} value={formData.message} name='message' placeholder='Leave a message' className="contact-message form-control" id="message" />
               </div>
 
               <div className="text-center pt-5">
-                <button className='common-btn-2'>submit</button>
+                <button onClick={handleSubmit} className='common-btn-2'>submit</button>
               </div>
             </form>
           </div>
@@ -87,26 +97,12 @@ export default function ContactForm() {
           <div className="contact-img rounded-5 d-flex justify-content-center align-items-center">
             {/* <img src="/portfolio1.png" alt="" /> */}
             <div className="model">
-              {/* <Canvas camera={{ fov: 10, position: [10, 10, 10] }} >
-                <OrbitControls enableZoom={false} autoRotate={false} />
-                <ambientLight intensity={1} />
-                <directionalLight position={[3, 2, 1]} />
-                <KeyboardMini />
-              </Canvas> */}
-
               <Canvas camera={{ fov: 16, position: [10, 10, 10] }} >
                 <OrbitControls enableZoom={false} autoRotate={false} />
                 <ambientLight intensity={1} />
                 <directionalLight position={[3, 2, 1]} />
                 <Keyboard isTyping={isTyping} />
               </Canvas>
-
-              {/* <Canvas camera={{ fov: 10, position: [10, 10, 10] }} >
-                <OrbitControls enableZoom={false} autoRotate={false} />
-                <ambientLight intensity={1} />
-                <directionalLight position={[3, 2, 1]} />
-                <Mechanical />
-              </Canvas> */}
             </div>
           </div>
           <div className="contact-info rounded-5 d-flex flex-column justify-content-evenly align-items-center">
@@ -134,7 +130,7 @@ export default function ContactForm() {
               </div>
               <div className="mobile-info">
                 LinkedIn <br />
-                +91 9560545070
+                https://www.linkedin.com/in/yadav-lokesh/
               </div>
             </div>
           </div>

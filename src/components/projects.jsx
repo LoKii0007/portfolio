@@ -14,10 +14,9 @@ function Projects() {
     pinnedSections.forEach((section, index, sections) => {
 
       let img =  section.querySelector('img')
-
       img.onload = ()=>{
         let pinHeight = section.offsetHeight
-
+        
         gsap.to(section, {
           scrollTrigger: {
             trigger: section,
@@ -25,7 +24,8 @@ function Projects() {
             end: `+=${pinHeight*(sections.length-index)}` ,
             pin: true,
             pinSpacing: false,
-            scrub: 1
+            scrub: 1,
+            markers:true
           }
         })
   
@@ -66,7 +66,7 @@ function Projects() {
         </div>
 
         <div className="pinned pr wr pr-1 py-5">
-          <img className='img' src={`/${img?'fotf-600.jpg':'fotf.png'}`} alt="" />
+          <img className='img' src={`/${img?'fotf-600.jpg':'fotf.png'}`} alt="image" />
         </div>
 
         <div className="personal-project">
@@ -74,13 +74,13 @@ function Projects() {
         </div>
 
         <div className="pinned pr pr-2 py-5">
-          <img className='img' src={`/wechat.png`} alt="" />
+          <img className='img' src={`/${img?'ydmc-600.jpg':'ydmc.png'}`} alt="image" />
         </div>
         <div className="pinned pr pr-3 py-5">
-          <img className='img' src={`/ydmc.png`} alt="" />
+          <img className='img' src={`/${img?'fotf-600.jpg':'wechat.png'}`} alt="image" />
         </div>
         <div className="scroll pr pr-4 py-5">
-          <img className='img' src={`/savor.png`} alt="" />
+          <img className='img'  src={`/${img?'savor-600.png':'savor.png'}`} alt="image" />
         </div>
       </div>
     </>

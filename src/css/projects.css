@@ -7,6 +7,7 @@
     position: relative;
     border-radius: 40px;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 25px;
+    opacity: 1;
 }
 
 .work-project, .personal-project{
@@ -28,5 +29,9 @@
     .pr img{
         width: 90vw;
         border-radius: 15px;
+        /* height: 80vh; */
+    }
+    .work-project, .personal-project{
+        font-size: 24px;
     }
 }

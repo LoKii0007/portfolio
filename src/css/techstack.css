@@ -9,15 +9,7 @@
     color: white;
     background-color: rgb(0, 0, 0);
     font-weight: 600;
-    border: 2px solid black;
     z-index: 900;
-}
-
-.scaling{
-    height: 150px;
-    width: 50px;
-    border: 2px solid white;
-    background-color: rgb(94, 161, 248);
 }
 
 .skills{
@@ -25,36 +17,39 @@
     width: 100%;
 }
 
+.tech-icon{
+    background-color: white;
+    border: 2px solid black;
+    padding: 16px 40px;
+    font-weight: 600;
+}
+
+.front-1, .front-2{
+    width: 100%;
+}
+
 
 /* vertical  */
-.prometheus img, .redis img{
+/* .prometheus img, .redis img{
     animation: hover 2s ease-in-out infinite;
 }
 .next img, .grafana img{
     animation: hover 3s ease-in-out infinite;
 }
-.react img{
-    animation: hover 3s ease-in-out infinite 1s;
-}
 .node img, .docker img{
     animation: hover 3s ease-in-out infinite 2s;
 }
 .grafana img{
-    animation: hover 4s ease-in-out infinite;
+    animation: hover 3s ease-in-out infinite 1s;
 }
 .gsap img{
     animation: hover 4s ease-in-out infinite 1s;
 }
 
-/* horizonatl  */
+
 .express img{
     animation: hover-horizontal 3s ease-in-out infinite 2s;
-}
-.scaling{
-    /* animation: hover-horizontal 3s ease-in-out infinite; */
-    animation: scale 3s ease-in-out infinite;
-    transform-origin: center top;
-}
+} */
 
 .icon-img{
     height: 60px;
@@ -64,7 +59,6 @@
 .icon-img:hover{
     scale: 1.2;
     transition: .3s ease;
-    content: 'tech';
 }
 
 .frontend, .backend, .devops{
@@ -74,7 +68,16 @@
 
 
 @media screen and (max-width:600px) {
+    .skills{
+        justify-content: space-evenly !important;
+    }
     .icon-img{
         height: 50px;
+    }
+    .stack{
+        font-size: 20px;
+    }
+    .tech-icon{
+        padding: 8px 20px;
     }
 }

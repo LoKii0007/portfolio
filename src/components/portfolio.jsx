@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import '../css/portfolio.css'
 import { Canvas } from '@react-three/fiber';
 import { Circle, MeshDistortMaterial, OrbitControls, Ring, Sphere, Stage } from '@react-three/drei';
-import { Model } from '../models/Iron';
 
 
 const Portfolio = () => {

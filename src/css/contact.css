@@ -87,6 +87,7 @@ textarea{
     }
     .contact{
         padding-left: 0% !important;
+        padding-right: 32px !important;
         border-top-left-radius: 0% !important;
         border-bottom-left-radius: 0% !important;
     }
