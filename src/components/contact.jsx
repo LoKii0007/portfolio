@@ -5,6 +5,7 @@ import { OrbitControls } from '@react-three/drei';
 import { Keyboard } from '../models/Keyboard';
 import { ContactFormApi } from '../api/conatctformapi';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 export default function ContactForm() {
   const [isTyping, setIsTyping] = useState(false)
@@ -112,25 +113,25 @@ export default function ContactForm() {
               </div>
               <div className="email-info">
                 Email <br />
-                lokeshyadv8177@gmail.com
+                <a className='link' href="mailto:lokeshyadv8177@gmail.com">lokeshyadv8177@gmail.com</a>
               </div>
             </div>
             <div className="mobile rounded-4 py-3 d-flex align-items-center">
               <div className="mobile-icon px-4">
-                <i className="bi bi-envelope"></i>
+                <i className="bi bi-phone"></i>
               </div>
               <div className="mobile-info">
                 phone <br />
-                +91 9560545070
+                <a className='link' href="tel:+919560545070">+91 9560545070</a>
               </div>
             </div>
             <div className="mobile rounded-4 py-3 d-flex align-items-center">
               <div className="mobile-icon px-4">
-                <i className="bi bi-envelope"></i>
+                <i className="bi bi-linkedin"></i>
               </div>
               <div className="mobile-info">
                 LinkedIn <br />
-                https://www.linkedin.com/in/yadav-lokesh/
+                <Link className='link' to='https://www.linkedin.com/in/yadav-lokesh/' target='blank' >https://www.linkedin.com/in/yadav-lokesh/</Link>
               </div>
             </div>
           </div>

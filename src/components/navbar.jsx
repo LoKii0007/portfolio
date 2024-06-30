@@ -34,12 +34,12 @@ const Navbar = () => {
             <div className=''>
                 <div className={`custom-navbar d-flex justify-content-between align-items-center `} >
                     <div className={`navbar-left nav-items ms-5 d-flex flex-row justify-content-center align-items-center`}>
-                        <Link to="/" className="logo px-3 py-1">Portfolio</Link>
+                        <Link to="/" className="logo px-3 py-1">Lokesh</Link>
                     </div>
                     <div className={`navbar-right nav-items me-5 d-flex flex-row justify-content-center align-items-center`}>
-                        <Link to="/" className="nav-item px-3 py-1">Home</Link>
+                        {/* <Link to="/" className="nav-item px-3 py-1">Home</Link>
                         <Link to="/projects" className="nav-item px-3 py-1">Projects</Link>
-                        <Link to="/about" className="nav-item px-3 py-1">TechStack</Link>
+                        <Link to="/about" className="nav-item px-3 py-1">TechStack</Link> */}
                         <Link to="/contact" className="nav-item px-3 py-1">Contact</Link>
                         <div data-bs-toggle="offcanvas" href="#menu" aria-controls="menu" className="menu px-3 py-1">
                             <i className="bi bi-list"></i>

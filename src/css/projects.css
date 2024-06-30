@@ -10,9 +10,25 @@
     opacity: 1;
 }
 
-.work-project, .personal-project{
-    font-size: 48px;
+.work-project{
+    height: 100vh;
+    width: 100vw;
+}
+
+.main-middle{
+    font-size: 130px;
     font-weight: 700;
+    line-height:95px;
+    padding: 0px 10px;
+}
+
+.main-left, .main-right, .main-bottom{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.main-bottom{
+    padding: 40px 12px;
 }
 
 .pr-1 img{

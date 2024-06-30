@@ -4,7 +4,7 @@
     width: 100vw;
     transition: .5s ease ;
     transform: translateY(-10vh);
-    border-bottom: 10vh solid black;
+    border-bottom: 10vh solid #212529;
 }
 
 .nav-items{
@@ -20,7 +20,7 @@
 .menu-item, .logo{
     font-size: 3vh;
     text-decoration: none;
-    color: black;
+    color: #212529;
 }
 
 .nav-item:hover, .menu-item:hover{
@@ -30,7 +30,7 @@
 }
 
 .nav-item{
-    color: black;
+    color: #212529;
     text-decoration: none;
     border-radius: 10px;
 }

@@ -44,7 +44,7 @@
 
 .chat{
     font-size: 32px;
-    color: black;
+    color: #212529;
     font-weight: 600;
 }
 
@@ -74,6 +74,11 @@ textarea{
 .email, .mobile{
     background-color: whitesmoke;
     width: 95%;
+}
+
+.link{
+    /* text-decoration: none; */
+    color: #212529;
 }
 
 .mobile-model{

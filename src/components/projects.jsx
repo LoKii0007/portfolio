@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../css/projects.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
+import { Link } from 'react-router-dom'
 
 function Projects() {
 
@@ -9,6 +10,21 @@ function Projects() {
   const [img, setImg] = useState(false)
 
   useEffect(() => {
+
+    const height = window.innerHeight
+
+    gsap.to('.work-project', {
+      opacity:0,
+      scrollTrigger: {
+        trigger: '.work-project',
+        start: "top top",
+        end: `+=${height}` ,
+        pin: true,
+        pinSpacing: false,
+        scrub: 1,
+        // markers:true
+      }
+    })
 
     const pinnedSections = gsap.utils.toArray('.pinned')
     pinnedSections.forEach((section, index, sections) => {
@@ -61,26 +77,30 @@ function Projects() {
   return (
     <>
       <div className="projects d-flex flex-column justify-content-center align-items-center">
-        <div className="work-project pt-5">
-          Work
+        <div className="work-project d-flex flex-column justify-content-center align-items-center">
+          <div className="main d-flex">
+            <div className="main-left"><div style={{width:"100%", textAlign:"end"}} >SOME</div> <div>SELECTED</div></div>
+            <div className="main-middle">PROJECTS</div>
+            <div className="main-right">WEB <br />DEVOLOPMENT<br />UI & UX</div>
+          </div>
+          <div className="text-center main-bottom">
+            CUSTOMER PROJECTS , PERSONAL PROJECTS <br />
+            SOME RESEARCH AND PLAYGROUND.
+          </div>
         </div>
 
         <div className="pinned pr wr pr-1 py-5">
-          <img className='img' src={`/${img?'fotf-600.jpg':'fotf.png'}`} alt="image" />
-        </div>
-
-        <div className="personal-project">
-          Personal Projects
+          <Link to='https://fotf-frontend.vercel.app' target='blank' ><img className='img' src={`/${img?'fotf-600.jpg':'fotf.png'}`} alt="image" /></Link>
         </div>
 
         <div className="pinned pr pr-2 py-5">
-          <img className='img' src={`/${img?'ydmc-600.jpg':'ydmc.png'}`} alt="image" />
+         <Link to='https://ydmc.vercel.app' target='blank'><img className='img' src={`/${img?'ydmc-600.jpg':'ydmc.png'}`} alt="image" /></Link>
         </div>
         <div className="pinned pr pr-3 py-5">
-          <img className='img' src={`/${img?'fotf-600.jpg':'wechat.png'}`} alt="image" />
+        <Link to='https://we-chat-frontend-opal.vercel.app' target='blank'><img className='img' src={`/${img?'wechat-600.jpg':'wechat.png'}`} alt="image" /></Link>
         </div>
         <div className="scroll pr pr-4 py-5">
-          <img className='img'  src={`/${img?'savor-600.png':'savor.png'}`} alt="image" />
+        <Link to='https://savor-haven.vercel.app' target='blank'><img className='img'  src={`/${img?'savor-600.png':'savor.png'}`} alt="image" /></Link>
         </div>
       </div>
     </>
