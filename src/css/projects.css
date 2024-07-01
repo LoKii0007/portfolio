@@ -47,7 +47,20 @@
         border-radius: 15px;
         /* height: 80vh; */
     }
-    .work-project, .personal-project{
-        font-size: 24px;
+    .main-middle{
+        font-size: 40px;
+        font-weight: 700;
+        line-height:30px;
+        padding: 0px 8px;
+    }
+    .main-left, .main-right, .main-bottom{
+        font-size: 6px;
+        font-weight: 400;
+    }
+    .work-project{
+        height: 70vh;
+    }
+    .main-bottom{
+        padding: 20px 12px;
     }
 }
