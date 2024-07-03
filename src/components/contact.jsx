@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default function ContactForm() {
-  const baseUrl = 'https://portfoliobackend-sigma.vercel.app/';
+  const baseUrl = 'https://portfoliobackend-sigma.vercel.app/api/first';
+  // const baseUrl = 'http://localhost:3000/api/first';
   const [isTyping, setIsTyping] = useState(false)
   const typingTimeoutRef = useRef(null)
   const [formData, setFormData] = useState({
@@ -42,11 +43,11 @@ export default function ContactForm() {
     }
   }, [])
 
-  async function handleSubmit(){
+  async function handleSubmit(e){
     e.preventDefault()
     const res = await axios.post(baseUrl , formData)
     console.log(res)
-    if(res.data.status == 201){
+    if(res.status == 201){
       toast.success('message sent successfully')
     }else{
       toast.error('some error occured')
@@ -90,7 +91,7 @@ export default function ContactForm() {
               </div>
 
               <div className="text-center pt-5">
-                <button onClick={handleSubmit} className='common-btn-2'>submit</button>
+                <button onClick={(e)=>handleSubmit(e)} className='common-btn-2'>submit</button>
               </div>
             </form>
           </div>
