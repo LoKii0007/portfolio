@@ -3,11 +3,12 @@ import "../css/contact.css"
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Keyboard } from '../models/Keyboard';
-import { ContactFormApi } from '../api/conatctformapi';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function ContactForm() {
+  const baseUrl = 'https://portfoliobackend-sigma.vercel.app/';
   const [isTyping, setIsTyping] = useState(false)
   const typingTimeoutRef = useRef(null)
   const [formData, setFormData] = useState({
@@ -43,9 +44,9 @@ export default function ContactForm() {
 
   async function handleSubmit(){
     e.preventDefault()
-    const res = await ContactFormApi(data)
+    const res = await axios.post(baseUrl , formData)
     console.log(res)
-    if(res !== undefined){
+    if(res.data.status == 201){
       toast.success('message sent successfully')
     }else{
       toast.error('some error occured')
