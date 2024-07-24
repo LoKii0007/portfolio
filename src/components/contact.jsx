@@ -11,6 +11,7 @@ export default function ContactForm() {
   const baseUrl = 'https://portfoliobackend-sigma.vercel.app/api/first';
   // const baseUrl = 'http://localhost:3000/api/first';
   const [isTyping, setIsTyping] = useState(false)
+  const [loading, setLoading] = useState(false)
   const typingTimeoutRef = useRef(null)
   const [formData, setFormData] = useState({
     name: '',
@@ -45,17 +46,24 @@ export default function ContactForm() {
 
   async function handleSubmit(e){
     e.preventDefault()
-    const res = await axios.post(baseUrl , formData)
-    console.log(res)
-    if(res.status == 201){
-      toast.success('message sent successfully')
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      })
-    }else{
+    setLoading(true)
+    try {
+      const res = await axios.post(baseUrl , formData)
+      console.log(res)
+      if(res.status == 201){
+        toast.success('message sent successfully')
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        })
+      }else{
+        toast.error('some error occured')
+      }
+    } catch (error) {
       toast.error('some error occured')
+    }finally{
+      setLoading(false)
     }
   }
 
@@ -81,22 +89,22 @@ export default function ContactForm() {
           </div>
           <hr />
           <div className="contact-bottom">
-            <form action="" type="submit" className='contact-form'>
+            <form type="submit" className='contact-form'>
               <div className=" d-flex flex-column ">
                 <label htmlFor="name" className="custom-form align-items-start d-flex form-label">Name</label>
-                <input type="name" required={true} onChange={(e) => handleData(e)} value={formData.name} name='name' className="contact-name form-control" id="name" placeholder='someone' />
+                <input type="name" required  onChange={(e) => handleData(e)} value={formData.name} name='name' className="contact-name form-control" id="name" placeholder='someone' />
               </div>
               <div className="my-3 d-flex flex-column">
                 <label htmlFor="Email" className="custom-form align-items-start d-flex form-label ">Email</label>
-                <input type="email" required={true} onChange={(e) => handleData(e)} value={formData.email} name='email' className="contact-email form-control" id="email" placeholder='someone@gmail.com' />
+                <input type="email" required  onChange={(e) => handleData(e)} value={formData.email} name='email' className="contact-email form-control" id="email" placeholder='someone@gmail.com' />
               </div>
               <div className=" d-flex flex-column">
                 <label htmlFor="message" className="custom-form align-items-start d-flex form-label ">Message</label>
-                <textarea type="text" required={true} onChange={(e) => handleData(e)} value={formData.message} name='message' placeholder='Leave a message' className="contact-message form-control" id="message" />
+                <textarea type="text" required onChange={(e) => handleData(e)} value={formData.message} name='message' placeholder='Leave a message' className="contact-message form-control" id="message" />
               </div>
 
               <div className="text-center pt-5">
-                <button onClick={(e)=>handleSubmit(e)} className='common-btn-2'>submit</button>
+                <button disabled={loading} onClick={(e)=>handleSubmit(e)} className='common-btn-2'>{loading ? 'Sending ...' : 'Submit'}</button>
               </div>
             </form>
           </div>
