@@ -1,7 +1,7 @@
 import Matter from "matter-js";
 import { useEffect } from "react";
 
-function Tech() {
+function MatterJs() {
   useEffect(() => {
     var Example = {};
 
@@ -141,4 +141,4 @@ function Tech() {
   );
 }
 
-export default Tech;
+export default MatterJs;

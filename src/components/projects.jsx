@@ -100,7 +100,7 @@ function Projects() {
         <Link to='https://we-chat-frontend-opal.vercel.app' target='blank'><img className='img' src={`/${img?'wechat-600.jpg':'wechat.png'}`} alt="image" /></Link>
         </div>
         <div className="scroll pr pr-4 py-5">
-        <Link to='https://savor-haven.vercel.app' target='blank'><img className='img'  src={`/${img?'savor-600.png':'savor.png'}`} alt="image" /></Link>
+        {/* <Link to='https://savor-haven.vercel.app' target='blank'><img className='img'  src={`/${img?'savor-600.png':'savor.png'}`} alt="image" /></Link> */}
         </div>
       </div>
     </>
