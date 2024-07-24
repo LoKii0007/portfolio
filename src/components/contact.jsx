@@ -49,6 +49,11 @@ export default function ContactForm() {
     console.log(res)
     if(res.status == 201){
       toast.success('message sent successfully')
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      })
     }else{
       toast.error('some error occured')
     }
