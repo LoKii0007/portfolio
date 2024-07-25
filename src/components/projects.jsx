@@ -91,31 +91,19 @@ function Projects() {
 
         <div className="pinned project project-1 py-5">
           <Link className='position-relative d-flex justify-content-center align-items-center' to='https://fotf-frontend.vercel.app' target='blank' >
-            <img className='img z-n1' src={`/${img ? 'fotf-600.jpg' : 'fotf.png'}`} alt="image" />
-            {/* <div className='position-absolute project-content'>
-              <h2 className="content-heading">Paid Project</h2>
-              <h4 className="content-info">
-                <ul>
-                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                </ul>
-              </h4>
-            </div> */}
+            <img className='img ' src={`/${img ? 'fotf-600.jpg' : 'fotf.png'}`} alt="image" />
           </Link>
         </div>
-
         <div className="pinned project project-2 py-5">
-          <Link to='https://login-auth-54c3e.web.app/' target='blank'><img className='img' src={`/${img ? 'ydmc-600.jpg' : 'xrc.png'}`} alt="image" /></Link>
-        </div>
-        <div className="pinned project project-3 py-5">
           <Link to='https://ydmc.vercel.app' target='blank'><img className='img' src={`/${img ? 'ydmc-600.jpg' : 'ydmc.png'}`} alt="image" /></Link>
         </div>
-        <div className="pinned project project-4 py-5">
+        <div className="pinned project project-3 py-5">
           <Link to='https://we-chat-frontend-opal.vercel.app' target='blank'><img className='img' src={`/${img ? 'wechat-600.jpg' : 'wechat.png'}`} alt="image" /></Link>
         </div>
-        <div className="scroll project project-5 py-5">
+        <div className="pinned project project-5 py-5">
+          <Link to='https://login-auth-54c3e.web.app/' target='blank'><img className='img' src={`/${img ? 'xrc-600.jpg' : 'xrc.png'}`} alt="image" /></Link>
+        </div>
+        <div className="scroll project project-4 py-5">
           <Link to='https://savor-haven.vercel.app' target='blank'><img className='img' src={`/${img ? 'savor-600.png' : 'savor.png'}`} alt="image" /></Link>
         </div>
       </div>
