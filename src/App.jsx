@@ -38,7 +38,7 @@ function App() {
           <Route exact path="/" element={<Home/>}></Route>
           <Route exact path="/contact" element={<ContactForm/>}></Route>
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
         <Toaster/>
       </Router>
     </>

@@ -2,7 +2,7 @@
     overflow: hidden;
 }
 
-.pr img{
+.project img{
     width: 1100px;
     position: relative;
     border-radius: 40px;
@@ -30,15 +30,16 @@
 .main-bottom{
     padding: 40px 12px;
 }
-
-.pr-1 img{
-    z-index: 100;
+.project img:hover .project-content{
+    top: 0%;
+    transition: 1s ease;
 }
-.pr-2 img{
-    z-index: 110;
-}
-.pr-scroll img{
-    z-index: 120;
+.project-content{
+    background-color: antiquewhite;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    transition: 1s ease;
 }
 
 @media screen and (max-width:600px) {

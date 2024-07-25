@@ -14,11 +14,11 @@ function Projects() {
     const height = window.innerHeight
 
     gsap.to('.work-project', {
-      opacity:0,
+      opacity: 0,
       scrollTrigger: {
         trigger: '.work-project',
         start: "top top",
-        end: `+=${height}` ,
+        end: `+=${height}`,
         pin: true,
         pinSpacing: false,
         scrub: 1,
@@ -29,22 +29,22 @@ function Projects() {
     const pinnedSections = gsap.utils.toArray('.pinned')
     pinnedSections.forEach((section, index, sections) => {
 
-      let img =  section.querySelector('img')
-      img.onload = ()=>{
+      let img = section.querySelector('img')
+      img.onload = () => {
         let pinHeight = section.offsetHeight
-        
+
         gsap.to(section, {
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: `+=${pinHeight*(sections.length-index)}` ,
+            end: `+=${pinHeight * (sections.length - index)}`,
             pin: true,
             pinSpacing: false,
             scrub: 1,
             // markers:true
           }
         })
-  
+
         gsap.to(img, {
           scale: 0.5,
           scrollTrigger: {
@@ -59,16 +59,16 @@ function Projects() {
 
     })
 
-    function responsive(){
-      if(window.innerWidth <600 ){
-           setImg(true)
-      }else{
+    function responsive() {
+      if (window.innerWidth < 600) {
+        setImg(true)
+      } else {
         setImg(false)
       }
     }
     responsive()
     window.addEventListener('resize', responsive)
-    return()=>{
+    return () => {
       window.removeEventListener('resize', responsive)
     }
 
@@ -79,7 +79,7 @@ function Projects() {
       <div className="projects d-flex flex-column justify-content-center align-items-center">
         <div className="work-project d-flex flex-column justify-content-center align-items-center">
           <div className="main d-flex">
-            <div className="main-left"><div style={{width:"100%", textAlign:"end"}} >SOME</div> <div>SELECTED</div></div>
+            <div className="main-left"><div style={{ width: "100%", textAlign: "end" }} >SOME</div> <div>SELECTED</div></div>
             <div className="main-middle">PROJECTS</div>
             <div className="main-right">WEB <br />DEVOLOPMENT<br />UI & UX</div>
           </div>
@@ -89,18 +89,34 @@ function Projects() {
           </div>
         </div>
 
-        <div className="pinned pr wr pr-1 py-5">
-          <Link to='https://fotf-frontend.vercel.app' target='blank' ><img className='img' src={`/${img?'fotf-600.jpg':'fotf.png'}`} alt="image" /></Link>
+        <div className="pinned project project-1 py-5">
+          <Link className='position-relative d-flex justify-content-center align-items-center' to='https://fotf-frontend.vercel.app' target='blank' >
+            <img className='img z-n1' src={`/${img ? 'fotf-600.jpg' : 'fotf.png'}`} alt="image" />
+            {/* <div className='position-absolute project-content'>
+              <h2 className="content-heading">Paid Project</h2>
+              <h4 className="content-info">
+                <ul>
+                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+                  <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+                </ul>
+              </h4>
+            </div> */}
+          </Link>
         </div>
 
-        <div className="pinned pr pr-2 py-5">
-         <Link to='https://ydmc.vercel.app' target='blank'><img className='img' src={`/${img?'ydmc-600.jpg':'ydmc.png'}`} alt="image" /></Link>
+        <div className="pinned project project-2 py-5">
+          <Link to='https://login-auth-54c3e.web.app/' target='blank'><img className='img' src={`/${img ? 'ydmc-600.jpg' : 'xrc.png'}`} alt="image" /></Link>
         </div>
-        <div className="pinned pr pr-3 py-5">
-        <Link to='https://we-chat-frontend-opal.vercel.app' target='blank'><img className='img' src={`/${img?'wechat-600.jpg':'wechat.png'}`} alt="image" /></Link>
+        <div className="pinned project project-3 py-5">
+          <Link to='https://ydmc.vercel.app' target='blank'><img className='img' src={`/${img ? 'ydmc-600.jpg' : 'ydmc.png'}`} alt="image" /></Link>
         </div>
-        <div className="scroll pr pr-4 py-5">
-        <Link to='https://savor-haven.vercel.app' target='blank'><img className='img'  src={`/${img?'savor-600.png':'savor.png'}`} alt="image" /></Link>
+        <div className="pinned project project-4 py-5">
+          <Link to='https://we-chat-frontend-opal.vercel.app' target='blank'><img className='img' src={`/${img ? 'wechat-600.jpg' : 'wechat.png'}`} alt="image" /></Link>
+        </div>
+        <div className="scroll project project-5 py-5">
+          <Link to='https://savor-haven.vercel.app' target='blank'><img className='img' src={`/${img ? 'savor-600.png' : 'savor.png'}`} alt="image" /></Link>
         </div>
       </div>
     </>
