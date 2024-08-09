@@ -31,7 +31,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className=''>
+            <div className=' position-fixed'>
                 <div className={`custom-navbar d-flex justify-content-between align-items-center `} >
                     <div className={`navbar-left nav-items ms-5 d-flex flex-row justify-content-center align-items-center`}>
                         <Link to="/" className="logo px-3 py-1">Lokesh</Link>
