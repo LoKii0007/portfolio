@@ -31,7 +31,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className=' position-fixed'>
+            <nav className=''>
                 <div className={`custom-navbar d-flex justify-content-between align-items-center `} >
                     <div className={`navbar-left nav-items ms-5 d-flex flex-row justify-content-center align-items-center`}>
                         <Link to="/" className="logo px-3 py-1">Lokesh</Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </nav>
 
             <div className="offcanvas offcanvas-end d-flex flex-column align-items-center" tabIndex="-1" id="menu" aria-labelledby="menuLabel">
                 <div className="offcanvas-body pe-3 pt-4 d-flex flex-column align-items-end">
