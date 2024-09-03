@@ -127,12 +127,3 @@ function TechStack() {
 }
 
 export default TechStack;
-
-{/* <div className="react-model">
-                <Canvas camera={{ fov: 30, position: [0, 0, 15] }} >
-                  <OrbitControls enableZoom={false} autoRotate={true} />
-                  <ambientLight intensity={1} />
-                  <directionalLight position={[3, 2, 1]} />
-                  <ReactModel/>
-                </Canvas>
-              </div> */}

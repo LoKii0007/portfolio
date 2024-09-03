@@ -1,73 +1,155 @@
-.projects{
+.projects {
     overflow: hidden;
 }
 
-.project img{
-    width: 1100px;
+.project-wrapper{
+    width: 100vw;
+}
+
+.project-card {
     position: relative;
-    border-radius: 40px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 25px;
+    overflow: hidden;
+    width: 80vw;
+    transition: .5s ease;
+    border-radius: 32px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px -3px 0px 0px inset, rgb(255, 255, 255) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.06) 0px 4px 2px 0px inset, rgba(0, 0, 0, 0.04) 0px 0px 24px 4px inset, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(194,233,251,1) 0%, rgba(161,196,253,1) 44%, rgba(194,233,251,1) 100%);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    z-index: 90;
+    border-radius: 32px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px -3px 0px 0px inset, rgb(255, 255, 255) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.06) 0px 4px 2px 0px inset, rgba(0, 0, 0, 0.04) 0px 0px 24px 4px inset, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+
+}
+
+.project-card:hover::before {
     opacity: 1;
 }
 
-.work-project{
+.project-left {
+    width: 30%;
+    z-index: 100;
+}
+
+.project-right{
+    z-index: 100;
+}
+
+.project-img {
+    width: 54vw;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.559);
+}
+
+.project-name {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.project-desc {
+    font-size: medium;
+}
+
+.project-button {
+    font-weight: 500;
+    font-size: large;
+    width: 100%;
+    transition: .5s ease;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px -3px 0px 0px inset, rgb(255, 255, 255) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.06) 0px 4px 2px 0px inset, rgba(0, 0, 0, 0.04) 0px 0px 24px 4px inset, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+
+.project-button:hover{
+    transition: .5s ease;
+    box-shadow: rgba(118, 155, 215, 0.5) 0px -32px 32px 0px inset, rgb(255, 255, 255) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.06) 0px 4px 2px 0px inset, rgba(0, 0, 0, 0.04) 0px 0px 24px 4px inset, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+
+.work-project {
     height: 100vh;
     width: 100vw;
 }
 
-.project-1{
+.project-1 {
     z-index: 100;
 }
-.project-2{
+
+.project-2 {
     z-index: 120;
 }
-.project-3{
+
+.project-3 {
     z-index: 130;
 }
-.project-4{
+
+.project-4 {
     z-index: 140;
 }
-.project-5{
+
+.project-5 {
     z-index: 131;
 }
 
-.main-middle{
+.main-middle {
     font-size: 130px;
     font-weight: 700;
-    line-height:95px;
+    line-height: 95px;
     padding: 0px 10px;
 }
 
-.main-left, .main-right, .main-bottom{
+.main-left,
+.main-right,
+.main-bottom {
     font-size: 12px;
     font-weight: 400;
 }
 
-.main-bottom{
+.main-bottom {
     padding: 40px 12px;
 }
 
 
 @media screen and (max-width:600px) {
-    .project img{
-        width: 90vw;
-        border-radius: 15px;
-        /* height: 80vh; */
+    .project-img {
+        width: 100%;
     }
-    .main-middle{
+
+    .project-card{
+        /* height: 60vh; */
+        flex-direction: column-reverse !important;
+    }
+
+    .project-left{
+        width: 100%;
+    }
+
+    .main-middle {
         font-size: 40px;
         font-weight: 700;
-        line-height:30px;
+        line-height: 30px;
         padding: 0px 8px;
     }
-    .main-left, .main-right, .main-bottom{
+
+    .main-left,
+    .main-right,
+    .main-bottom {
         font-size: 6px;
         font-weight: 400;
     }
-    .work-project{
+
+    .work-project {
         height: 70vh;
     }
-    .main-bottom{
+
+    .main-bottom {
         padding: 20px 12px;
     }
 }

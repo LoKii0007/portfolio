@@ -4,7 +4,7 @@
 }
 
 .portfolio-wrapper{
-    width: 250vw;
+    width: 150vw;
 }
 
 .portfolio-wrapper::-webkit-scrollbar{
@@ -12,7 +12,7 @@
 }
 
 .portfolio{
-    height: 100vh;
+    height: 90vh;
     transition: .5s ease;
     width: 100vw;
 }
@@ -20,8 +20,7 @@
 .portfolio-section2, .portfolio-section3, .portfolio-section4{
     width: 100vw;
     font-size: 70px;
-    height: 100vh;
-    display: none !important;
+    height: 90vh;
 }
 .portfolio-section3{
     width: 20vw;
@@ -69,11 +68,15 @@
 
 .name{
     color: rgb(73, 183, 223);
+    color: rgba(194,233,251, 1);
+    color: rgba(161,196,253, 1);
     -webkit-text-stroke: 0px;
 }
 
 .name::before{
     color: rgb(73, 183, 223);
+    color: rgba(194,233,251, 1);
+    color: rgba(161,196,253, 1);
     z-index: 20;
 }
 
@@ -96,9 +99,8 @@
     width: 400px;
 }
 
-.model-dragon{
-    height: 100vh;
-    width: 100vw;
+.plane-model{
+    transform: translate(-50vw, -30vh);
 }
 
 /* -----------media query------------ */

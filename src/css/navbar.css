@@ -1,14 +1,17 @@
 nav{
     z-index: 999;
+    width: 100vw;
+    top : 16px
 }
 
 .custom-navbar{
     background-color: #ffffff;
-    height: 10vh;
-    width: 100vw;
+    height: 60px;
+    width: 80vw;
     transition: .5s ease ;
     transform: translateY(-10vh);
     border-bottom: 10vh solid #212529;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px -3px 0px 0px inset, rgb(255, 255, 255) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.06) 0px 4px 2px 0px inset, rgba(0, 0, 0, 0.04) 0px 0px 24px 4px inset, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
 }
 
 .nav-items{
@@ -28,15 +31,18 @@ nav{
 }
 
 .nav-item:hover, .menu-item:hover{
-    background-color: rgba(0, 0, 0, 0.311);
-    transition: .5s ease;
-    border-radius: 10px;
+    transition: 1s ease;
+    box-shadow: rgba(194,233,251, 1) 0px -32px 32px 0px inset, rgb(255, 255, 255) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.06) 0px 4px 2px 0px inset, rgba(0, 0, 0, 0.04) 0px 0px 24px 4px inset, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+
+.nav-item-last{
+    box-shadow: rgba(161,196,253, 1) 0px -32px 32px 0px inset, rgb(255, 255, 255) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.06) 0px 4px 2px 0px inset, rgba(0, 0, 0, 0.04) 0px 0px 24px 4px inset, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
 }
 
 .nav-item{
     color: #212529;
     text-decoration: none;
-    border-radius: 10px;
+    transition: .5s ease;
 }
 
 .navbar-left, .navbar-right{

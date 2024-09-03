@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import '../css/navbar.css'
+import { Observer } from 'gsap/all'
 
 const Navbar = () => {
+
+    gsap.registerPlugin(Observer)
 
     useEffect(() => {
 
@@ -15,7 +18,7 @@ const Navbar = () => {
             duration: 0.5
         })
         tl.to('.custom-navbar', {
-            borderBottom: 3,
+            borderBottom: 0,
             ease: "power4.in",
             duration: 0.7
         })
@@ -27,20 +30,33 @@ const Navbar = () => {
             duration: 1,
             stagger: 0.07
         })
+
+        const tl2 = gsap.timeline({paused : true})
+
+        tl2.to('nav', {
+            y:'-10vh'
+        })
+
+        Observer.create({
+            target: window,
+            type : 'wheel , touch',
+            onDown : ()=> tl2.play(),
+            onUp : ()=> tl2.reverse()
+        })
     })
 
     return (
         <>
-            <nav className=''>
-                <div className={`custom-navbar d-flex justify-content-between align-items-center `} >
+            <nav className='d-flex position-sticky justify-content-center mt-3'>
+                <div className={`custom-navbar rounded-pill d-flex justify-content-between align-items-center `} >
                     <div className={`navbar-left nav-items ms-5 d-flex flex-row justify-content-center align-items-center`}>
                         <Link to="/" className="logo px-3 py-1">Lokesh</Link>
                     </div>
-                    <div className={`navbar-right nav-items me-5 d-flex flex-row justify-content-center align-items-center`}>
-                        {/* <Link to="/" className="nav-item px-3 py-1">Home</Link>
-                        <Link to="/projects" className="nav-item px-3 py-1">Projects</Link>
-                        <Link to="/about" className="nav-item px-3 py-1">TechStack</Link> */}
-                        <Link to="/contact" className="nav-item px-3 py-1">Contact</Link>
+                    <div className={`navbar-right nav-items me-2 d-flex flex-row justify-content-center align-items-center`}>
+                        <Link to="/projects" className="nav-item px-3 py-1 rounded-pill">Projects</Link>
+                        <Link to="/about" className="nav-item px-3 py-1 rounded-pill">Skills</Link>
+                        <Link to="/contact" className="nav-item px-3 py-1 rounded-pill">Connect</Link>
+                        <Link to="/contact" className="nav-item nav-item-last px-3 py-1 rounded-pill">Say, Hi</Link>
                         <div data-bs-toggle="offcanvas" href="#menu" aria-controls="menu" className="menu px-3 py-1">
                             <i className="bi bi-list"></i>
                         </div>

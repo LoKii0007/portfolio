@@ -48,6 +48,10 @@ export default function ContactForm() {
     e.preventDefault()
     setLoading(true)
     try {
+      if(!formData.name || !formData.email || !formData.message){
+        toast.error('please fill all fields')
+        return
+      }
       const res = await axios.post(baseUrl , formData)
       console.log(res)
       if(res.status == 201){
@@ -92,19 +96,19 @@ export default function ContactForm() {
             <form type="submit" className='contact-form'>
               <div className=" d-flex flex-column ">
                 <label htmlFor="name" className="custom-form align-items-start d-flex form-label">Name</label>
-                <input type="name" required  onChange={(e) => handleData(e)} value={formData.name} name='name' className="contact-name form-control" id="name" placeholder='someone' />
+                <input requi type="name" required  onChange={(e) => handleData(e)} value={formData.name} name='name' className="contact-name form-control" id="name" placeholder='someone' />
               </div>
               <div className="my-3 d-flex flex-column">
                 <label htmlFor="Email" className="custom-form align-items-start d-flex form-label ">Email</label>
-                <input type="email" required  onChange={(e) => handleData(e)} value={formData.email} name='email' className="contact-email form-control" id="email" placeholder='someone@gmail.com' />
+                <input type="email" required onChange={(e) => handleData(e)} value={formData.email} name='email' className="contact-email form-control" id="email" placeholder='someone@gmail.com' />
               </div>
               <div className=" d-flex flex-column">
                 <label htmlFor="message" className="custom-form align-items-start d-flex form-label ">Message</label>
                 <textarea type="text" required onChange={(e) => handleData(e)} value={formData.message} name='message' placeholder='Leave a message' className="contact-message form-control" id="message" />
               </div>
 
-              <div className="text-center pt-5">
-                <button disabled={loading} onClick={(e)=>handleSubmit(e)} className='common-btn-2'>{loading ? 'Sending ...' : 'Submit'}</button>
+              <div className="text-center submit-btn pt-5">
+                <button disabled={loading } onClick={(e)=>handleSubmit(e)} className='common-btn-2'>{loading ? 'Sending ...' : 'Submit'}</button>
               </div>
             </form>
           </div>
@@ -114,7 +118,7 @@ export default function ContactForm() {
             {/* <img src="/portfolio1.png" alt="" /> */}
             <div className="model">
               <Canvas camera={{ fov: 16, position: [10, 10, 10] }} >
-                <OrbitControls enableZoom={false} autoRotate={false} />
+                {/* <OrbitControls enableZoom={false} autoRotate={false} /> */}
                 <ambientLight intensity={1} />
                 <directionalLight position={[3, 2, 1]} />
                 <Keyboard isTyping={isTyping} />
@@ -127,7 +131,7 @@ export default function ContactForm() {
                 <i className="bi bi-envelope"></i>
               </div>
               <div className="email-info">
-                Email <br />
+                <b>Email</b> <br />
                 <a className='link' href="mailto:lokeshyadv8177@gmail.com">lokeshyadv8177@gmail.com</a>
               </div>
             </div>
@@ -136,7 +140,7 @@ export default function ContactForm() {
                 <i className="bi bi-phone"></i>
               </div>
               <div className="mobile-info">
-                phone <br />
+                <b>Phone</b> <br />
                 <a className='link' href="tel:+919560545070">+91 9560545070</a>
               </div>
             </div>
@@ -145,7 +149,7 @@ export default function ContactForm() {
                 <i className="bi bi-linkedin"></i>
               </div>
               <div className="mobile-info">
-                LinkedIn <br />
+                <b>LinkedIn</b> <br />
                 <Link className='link' to='https://www.linkedin.com/in/yadav-lokesh/' target='blank' >https://www.linkedin.com/in/yadav-lokesh/</Link>
               </div>
             </div>

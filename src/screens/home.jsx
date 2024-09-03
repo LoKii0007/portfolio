@@ -1,19 +1,19 @@
-import React from 'react'
-import Portfolio from '../components/portfolio'
-import Projects from '../components/projects'
-import TechStack from '../components/techstack'
-import ContactForm from '../components/contact'
-import '../css/home.css'
+import React from "react";
+import Portfolio from "../components/portfolio";
+import Projects from "../components/projects";
+import TechStack from "../components/techstack";
+import ContactForm from "../components/contact";
+import "../css/home.css";
 
-const Home = ({isMobile}) => {
+const Home = ({ isMobile }) => {
   return (
     <>
       <Portfolio isMobile={isMobile} />
-      <TechStack/>
-      <Projects/>
-      <ContactForm/>
+      <TechStack />
+      <Projects />
+      <ContactForm />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
