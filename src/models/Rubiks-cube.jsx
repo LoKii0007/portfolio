@@ -5,7 +5,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function RubiksCubeModel(props) {
   const group = React.useRef()
-  const { nodes, materials, animations } = useGLTF('/rubiks-cube-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('/models/rubiks-cube-transformed.glb')
   const { actions } = useAnimations(animations, group)
 
   function playAnimation() {
@@ -23,7 +23,7 @@ export function RubiksCubeModel(props) {
   }, [])
 
   return (
-    <group ref={group} {...props} dispose={null} rotation={[0,0, 0 ]} position={[-2,-2,0]} >
+    <group ref={group} {...props} dispose={null} rotation={[0,0, 0 ]} position={[-2,-2,-10]} >
       <group name="Sketchfab_Scene">
         <group name="GLTF_SceneRootNode" >
           <group name="Cube_0" position={[3.993, 4, 0.007]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
@@ -137,4 +137,4 @@ export function RubiksCubeModel(props) {
   )
 }
 
-useGLTF.preload('/rubiks-cube-transformed.glb')
+useGLTF.preload('/models/rubiks-cube-transformed.glb')

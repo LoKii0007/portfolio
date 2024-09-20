@@ -1,65 +1,111 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import '../css/navbar.css'
 import { Observer } from 'gsap/all'
+import { useGSAP } from '@gsap/react'
+import { GlobalContext } from '../context/globalContext'
 
-const Navbar = () => {
+const Navbar = ({isMobile, isTablet}) => {
 
     gsap.registerPlugin(Observer)
+    const {darkTheme, setDarkTheme} = useContext(GlobalContext)
+    console.log(darkTheme)
+    const [handleView, setHandleView] = useState('portfolio')
 
-    useEffect(() => {
+    useGSAP(() => {
 
         const tl = gsap.timeline()
 
         tl.to('.custom-navbar', {
             y: 0,
-            ease: "expo.in",
-            duration: 0.5
+            ease: "elastic",
+            duration: 1
         })
         tl.to('.custom-navbar', {
-            borderBottom: 0,
-            ease: "power4.in",
-            duration: 0.7
+            // width:`${isMobile && '95vw'} ${isTablet && '90vw'} ${!isMobile && '80vw'}  `,
+            width:`${isMobile ? '92vw' : '80vw'}`,
+            // ease: "elastic",
+            duration: 1
+        })
+        tl.to('.navbar-left, .navbar-right', {
+            opacity:1
         })
 
-        tl.to(".nav-items", {
-            y: 0,
-            opacity: 1,
-            ease: "back.in",
-            duration: 1,
-            stagger: 0.07
+        const tl2 = gsap.to('nav', {
+            y:'-10vh',
+            paused:true
         })
 
-        const tl2 = gsap.timeline({paused : true})
-
-        tl2.to('nav', {
-            y:'-10vh'
+        const navMobile = gsap.to('nav', {
+            y:'20vh',
+            paused:true
         })
 
-        Observer.create({
-            target: window,
-            type : 'wheel , touch',
-            onDown : ()=> tl2.play(),
-            onUp : ()=> tl2.reverse()
-        })
-    })
+
+        // {
+        //     isMobile && 
+        //     Observer.create({
+        //         target: window,
+        //         type : 'wheel , touch',
+        //         onDown : ()=> navMobile.play(),
+        //         onUp : ()=> navMobile.reverse()
+        //     })
+        // }
+
+        {
+            !isMobile &&
+            Observer.create({
+                target: window,
+                type : 'wheel , touch',
+                onDown : ()=> tl2.play(),
+                onUp : ()=> tl2.reverse()
+            })
+        }
+
+    }, [isMobile])
+
+    function handleFlag(){
+        console.log('clicked')
+    }
+
+    function handleTheme(){
+        setDarkTheme(!darkTheme)
+    }
+
+
+    useEffect(() => {
+        const element = document.querySelector(`#${handleView}`);
+        if (element) {
+          window.scrollTo({
+            top: element.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+    }, [handleView]);
 
     return (
         <>
-            <nav className='d-flex position-sticky justify-content-center mt-3'>
-                <div className={`custom-navbar rounded-pill d-flex justify-content-between align-items-center `} >
-                    <div className={`navbar-left nav-items ms-5 d-flex flex-row justify-content-center align-items-center`}>
-                        <Link to="/" className="logo px-3 py-1">Lokesh</Link>
+            <nav className={` d-flex position-fixed justify-content-center`}>
+                <div className={` ${darkTheme?'dark-theme-bg':'light-theme-bg'} custom-navbar rounded-pill d-flex justify-content-between align-items-center `} >
+                    <div className={`navbar-left nav-items ms-3 d-flex flex-row justify-content-center align-items-center`}>
+                        <button onClick={()=> handleTheme()} className="theme d-flex align-items-center overflow-y-hidden">
+                            <div className='d-flex flex-column theme-icon'>
+                            <i className={` ${darkTheme?'light-mode':''} bi bi-brightness-high-fill`}></i>
+                            <i className={` ${darkTheme?'dark-mode':''} bi bi-moon-stars-fill`}></i>
+                            </div>
+                        </button>
+                        <Link to="/" className={`${darkTheme?'dark-theme-text':'light-theme-text'} nav-item loki px-3 py-1`}>Lokesh</Link>
                     </div>
-                    <div className={`navbar-right nav-items me-2 d-flex flex-row justify-content-center align-items-center`}>
-                        <Link to="/projects" className="nav-item px-3 py-1 rounded-pill">Projects</Link>
-                        <Link to="/about" className="nav-item px-3 py-1 rounded-pill">Skills</Link>
-                        <Link to="/contact" className="nav-item px-3 py-1 rounded-pill">Connect</Link>
-                        <Link to="/contact" className="nav-item nav-item-last px-3 py-1 rounded-pill">Say, Hi</Link>
-                        <div data-bs-toggle="offcanvas" href="#menu" aria-controls="menu" className="menu px-3 py-1">
+                    <div className={`navbar-right position-relative nav-items d-flex flex-row justify-content-center align-items-center`}>
+                        <div onClick={()=>setHandleView('projects')} className={` ${darkTheme?'dark-theme-text':'light-theme-text'} nav-item px-3 py-1 rounded-pill`}>Projects</div>
+                        <div onClick={()=>setHandleView('skills')} className={` ${darkTheme?'dark-theme-text':'light-theme-text'} nav-item px-3 py-1 rounded-pill`}>Skills</div>
+                        <div onClick={()=>setHandleView('contact')} className={` ${darkTheme?'dark-theme-text':'light-theme-text'} nav-item px-3 py-1 rounded-pill`}>Connect</div>
+                        <div onClick={handleFlag}  className={` ${darkTheme?'dark-theme-text':'light-theme-text'} nav-item nav-item-last px-3 py-1 rounded-pill`}>Say, Hi</div>
+                        {/* <div data-bs-toggle="offcanvas" href="#menu" aria-controls="menu" className="menu px-3 py-1">
                             <i className="bi bi-list"></i>
-                        </div>
+                        </div> */}
+                        <div className="pill-bg position-absolute rounded-pill"></div>
                     </div>
                 </div>
             </nav>

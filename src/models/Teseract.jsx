@@ -7,7 +7,7 @@ import { SkeletonUtils } from 'three-stdlib'
 
 export function TeseractModel(props) {
   const group = React.useRef()
-  const { scene, animations } = useGLTF('/teseract-transformed.glb')
+  const { scene, animations } = useGLTF('/models/teseract-transformed.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
   const { actions } = useAnimations(animations, group)
@@ -57,4 +57,4 @@ export function TeseractModel(props) {
   )
 }
 
-useGLTF.preload('/teseract-transformed.glb')
+useGLTF.preload('/models/teseract-transformed.glb')

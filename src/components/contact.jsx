@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import "../css/contact.css"
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
@@ -6,10 +6,12 @@ import { Keyboard } from '../models/Keyboard';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { GlobalContext } from '../context/globalContext';
 
 export default function ContactForm() {
   const baseUrl = 'https://portfoliobackend-sigma.vercel.app/api/first';
   // const baseUrl = 'http://localhost:3000/api/first';
+  const {darkTheme} = useContext(GlobalContext)
   const [isTyping, setIsTyping] = useState(false)
   const [loading, setLoading] = useState(false)
   const typingTimeoutRef = useRef(null)
@@ -73,38 +75,32 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="contact d-flex justify-content-between align-items-center">
-        <div className="contact-left p-5 rounded-5 ">
-          <div className="mobile-model">
-            <Canvas camera={{ fov: 16, position: [0, 10, 12] }} >
-              <OrbitControls enableZoom={false} autoRotate={false} />
-              <ambientLight intensity={1} />
-              <directionalLight position={[3, 2, 1]} />
-              <Keyboard isTyping={isTyping} />
-            </Canvas>
-          </div>
+      <div id='contact' className={` ${ darkTheme ? "dark-theme-bg" : "light-theme-bg"} contact d-flex justify-content-between align-items-center`}>
+        
+        <div className={`${ darkTheme ? "light-theme-shadow dark-theme-bg" : "light-theme-shadow light-theme-bg"} contact-left p-5 rounded-5 `}>
           <div className="contact-top">
-            <div className="touch">
+            <div className={`touch`}>
               Get in touch
             </div>
-            <div className="chat">
+            <div className={`${ darkTheme ? "dark-theme-text" : "light-theme-text"} chat`}>
               Let's Chat
             </div>
           </div>
-          <hr />
-          <div className="contact-bottom">
+          {/* <hr /> */}
+          <div style={{height:"1px", width : '100%', margin:'10px 0px', backgroundColor:`${darkTheme?'white':'black'}`}} ></div>
+          <div className={`${ darkTheme ? "dark-theme-text" : "light-theme-text"} contact-bottom`} >
             <form type="submit" className='contact-form'>
               <div className=" d-flex flex-column ">
                 <label htmlFor="name" className="custom-form align-items-start d-flex form-label">Name</label>
-                <input requi type="name" required  onChange={(e) => handleData(e)} value={formData.name} name='name' className="contact-name form-control" id="name" placeholder='someone' />
+                <input type="name" required  onChange={(e) => handleData(e)} value={formData.name} name='name' className="form-control" id="name" placeholder='someone' />
               </div>
               <div className="my-3 d-flex flex-column">
                 <label htmlFor="Email" className="custom-form align-items-start d-flex form-label ">Email</label>
-                <input type="email" required onChange={(e) => handleData(e)} value={formData.email} name='email' className="contact-email form-control" id="email" placeholder='someone@gmail.com' />
+                <input type="email" required onChange={(e) => handleData(e)} value={formData.email} name='email' className="form-control" id="email" placeholder='someone@gmail.com' />
               </div>
               <div className=" d-flex flex-column">
                 <label htmlFor="message" className="custom-form align-items-start d-flex form-label ">Message</label>
-                <textarea type="text" required onChange={(e) => handleData(e)} value={formData.message} name='message' placeholder='Leave a message' className="contact-message form-control" id="message" />
+                <textarea type="text" required onChange={(e) => handleData(e)} value={formData.message} name='message' placeholder='Leave a message' className="form-control" id="message" />
               </div>
 
               <div className="text-center submit-btn pt-5">
@@ -113,8 +109,9 @@ export default function ContactForm() {
             </form>
           </div>
         </div>
+
         <div className="contact-right rounded-5 d-flex flex-column">
-          <div className="contact-img rounded-5 d-flex justify-content-center align-items-center">
+          <div className={` ${ darkTheme ? "dark-theme-shadow dark-theme-bg" : "light-theme-shadow light-theme-bg"} contact-img rounded-5 d-flex justify-content-center align-items-center`}>
             {/* <img src="/portfolio1.png" alt="" /> */}
             <div className="model">
               <Canvas camera={{ fov: 16, position: [10, 10, 10] }} >
@@ -125,7 +122,7 @@ export default function ContactForm() {
               </Canvas>
             </div>
           </div>
-          <div className="contact-info rounded-5 d-flex flex-column justify-content-evenly align-items-center">
+          <div className={` ${ darkTheme ? "dark-theme-shadow dark-theme-bg" : "light-theme-shadow light-theme-bg"} contact-info rounded-5 d-flex flex-column justify-content-evenly align-items-center `}>
             <div className="email rounded-4 py-3 d-flex align-items-center">
               <div className="email-icon px-4">
                 <i className="bi bi-envelope"></i>

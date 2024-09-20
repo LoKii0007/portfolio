@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function PlaneModel(props) {
   const group = React.useRef()
-  const { nodes, materials, animations } = useGLTF('/plane-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('/models/plane-transformed.glb')
   const { actions } = useAnimations(animations, group)
   const radian = Math.PI / 180;
   
@@ -505,4 +505,4 @@ export function PlaneModel(props) {
   )
 }
 
-useGLTF.preload('/plane-transformed.glb')
+useGLTF.preload('/models/plane-transformed.glb')

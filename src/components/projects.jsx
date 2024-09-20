@@ -3,12 +3,19 @@ import "../css/projects.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import { projectsList } from "../../public/content/data";
+import { useContext } from "react";
+import { GlobalContext } from "../context/globalContext";
 
 function Projects() {
   gsap.registerPlugin(ScrollTrigger);
   const [img, setImg] = useState(false);
 
-  useEffect(() => {
+  const {darkTheme} = useContext(GlobalContext)
+
+
+  useGSAP(() => {
     const height = window.innerHeight;
 
     gsap.to(".work-project", {
@@ -63,8 +70,8 @@ function Projects() {
 
   return (
     <>
-      <div className="projects d-flex flex-column justify-content-center align-items-center">
-        <div className="work-project d-flex flex-column justify-content-center align-items-center">
+      <div id="projects" className={` ${darkTheme?'dark-theme-bg dark-theme-text':'light-theme-bg light-theme-text'} projects d-flex flex-column justify-content-center align-items-center`}>
+        <div className={`work-project d-flex flex-column justify-content-center align-items-center`}>
           <div className="main d-flex">
             <div className="main-left">
               <div style={{ width: "100%", textAlign: "end" }}>SOME</div>{" "}
@@ -82,125 +89,38 @@ function Projects() {
           </div>
         </div>
 
-        <div className="pinned project-wrapper d-flex justify-content-center">
-          <div className="project-card gap-3 d-flex project-1 p-3 mb-5">
-          <div className="project-left d-flex flex-column justify-content-between">
-            <div className="left-top p-3">
-              <div className="project-name pb-4">Fotf</div>
-              <div className="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati suscipit incidunt dolor nulla magni neque.</div>
+        {projectsList?.map((data, index) => (
+          <div key={index} className={`${projectsList.length-1 === index ? 'scroll' : 'pinned'} ${darkTheme?'dark-theme-bg':'light-theme-bg'} project-wrapper d-flex justify-content-center`}>
+            <div className={` ${darkTheme?'dark-theme-bg dark-theme-text light-theme-shadow dark-theme-gradient ':'light-theme-bg light-theme-text light-theme-shadow light-theme-gradient'} project-card gap-3 d-flex project-${index+1} p-3 mb-5`}>
+              <div className="project-left d-flex flex-column justify-content-between">
+                <div className="left-top p-3">
+                  <div className="project-name pb-4">{data.name}</div>
+                  <div className="project-desc d-flex flex-column">
+                    {data.points.map((point, index)=>(
+                      <div key={index} className="pb-2">
+                        {point}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="project-button rounded-pill d-flex justify-content-between align-items-center p-3">
+                  <div className="button-left">Open case</div>
+                  <div className="button-right">icon</div>
+                </div>
+              </div>
+              <div className="project-right d-flex justify-content-center align-items-center">
+                <Link to={data.link} target="blank">
+                  <img
+                    className="img project-img"
+                    src={`/${img ? data.mobileImage : data.desktopImage}`}
+                    alt="image"
+                  />
+                </Link>
+              </div>
             </div>
-            <div className="project-button rounded-pill d-flex justify-content-between align-items-center p-3">
-              <div className="button-left">Open case</div>
-              <div className="button-right">icon</div>
-            </div>
           </div>
-          <div className="project-right d-flex justify-content-center align-items-center">
-            {/* <Link to="https://fotf-frontend.vercel.app" target="blank"> */}
-            <img
-              className="img project-img"
-              src={`/${img ? "fotf-600.jpg" : "fotf.png"}`}
-              alt="image"
-            />
-            {/* </Link> */}
-          </div>
-          </div>
-        </div>
+        ))}
 
-        <div className="pinned project-wrapper d-flex justify-content-center">
-        <div className="project-card mb-5 gap-3 d-flex project-2 p-3">
-          <div className="project-left d-flex flex-column justify-content-between">
-            <div className="left-top p-3">
-              <div className="project-name pb-4">ydmc</div>
-              <div className="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odio in, impedit voluptatum sequi libero.</div>
-            </div>
-            <div className="project-button rounded-pill d-flex justify-content-between align-items-center p-3">
-              <div className="button-left">Open case</div>
-              <div className="button-right">icon</div>
-            </div>
-          </div>
-          <div className="project-right d-flex justify-content-center align-items-center">
-            <Link to="https://ydmc.vercel.app" target="blank">
-              <img
-                className="img project-img"
-                src={`/${img ? "ydmc-600.jpg" : "ydmc.png"}`}
-                alt="image"
-              />
-            </Link>
-          </div>
-        </div>
-        </div>
-
-        <div className="pinned project-wrapper d-flex justify-content-center">
-        <div className="project-card mb-5 gap-3 d-flex project-3 p-3">
-          <div className="project-left d-flex flex-column justify-content-between">
-            <div className="left-top p-3">
-              <div className="project-name pb-4">WeChat</div>
-              <div className="project-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos soluta odio consequuntur delectus quaerat natus.</div>
-            </div>
-            <div className="project-button rounded-pill d-flex justify-content-between align-items-center p-3">
-              <div className="button-left">Open case</div>
-              <div className="button-right">icon</div>
-            </div>
-          </div>
-          <div className="project-right d-flex justify-content-center align-items-center">
-            <Link to="https://we-chat-frontend-opal.vercel.app" target="blank">
-              <img
-                className="img project-img"
-                src={`/${img ? "wechat-600.jpg" : "wechat.png"}`}
-                alt="image"
-              />
-            </Link>
-          </div>
-        </div>
-        </div>
-
-        <div className="pinned project-wrapper d-flex justify-content-center">
-        <div className=" project-card mb-5 gap-3 d-flex project-5 p-3">
-          <div className="project-left d-flex flex-column justify-content-between">
-            <div className="left-top p-3">
-              <div className="project-name pb-4">Xr central</div>
-              <div className="project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quos omnis recusandae quaerat voluptatum iste.</div>
-            </div>
-            <div className="project-button rounded-pill d-flex justify-content-between align-items-center p-3">
-              <div className="button-left">Open case</div>
-              <div className="button-right">icon</div>
-            </div>
-          </div>
-          <div className="project-right d-flex justify-content-center align-items-center">
-            <Link to="https://login-auth-54c3e.web.app/" target="blank">
-              <img
-                className="img project-img"
-                src={`/${img ? "xrc-600.jpg" : "xrc.png"}`}
-                alt="image"
-              />
-            </Link>
-          </div>
-        </div>
-        </div>
-
-        <div className="scroll project-wrapper d-flex justify-content-center">
-        <div className="project-card mb-5 gap-3 d-flex project-4 p-3">
-          <div className="project-left d-flex flex-column justify-content-between">
-            <div className="left-top p-3">
-              <div className="project-name pb-4">Savor Heaven</div>
-              <div className="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione esse, molestiae modi eligendi itaque omnis?</div>
-            </div>
-            <div className="project-button rounded-pill d-flex justify-content-between align-items-center p-3">
-              <div className="button-left">Open case</div>
-              <div className="button-right">icon</div>
-            </div>
-          </div>
-          <div className="project-right d-flex justify-content-center align-items-center">
-            <Link to="https://savor-haven.vercel.app" target="blank">
-              <img
-                className="img project-img"
-                src={`/${img ? "savor-600.png" : "savor.png"}`}
-                alt="image"
-              />
-            </Link>
-          </div>
-        </div>
-        </div>
       </div>
     </>
   );

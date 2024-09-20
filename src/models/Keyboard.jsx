@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function Keyboard(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/keyboard-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('/models/keyboard-transformed.glb')
   const { actions } = useAnimations(animations, group)
 
   function playAnimation() {
@@ -61,4 +61,4 @@ export function Keyboard(props) {
   )
 }
 
-useGLTF.preload('/keyboard-transformed.glb')
+useGLTF.preload('/models/keyboard-transformed.glb')

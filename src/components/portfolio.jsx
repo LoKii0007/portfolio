@@ -7,16 +7,25 @@ import { RubiksCubeModel } from "../models/Rubiks-cube";
 import { TeseractModel } from "../models/Teseract";
 import { Perf } from "r3f-perf";
 import { PlaneModel } from "../models/Plane";
+import SplitType from "split-type";
+import { useGSAP } from "@gsap/react";
+import ContactForm from "./contactForm";
+import { useContext } from "react";
+import { GlobalContext } from "../context/globalContext";
 
 const Portfolio = ({ isMobile }) => {
   gsap.registerPlugin(ScrollTrigger);
+
   const [cubeRef, setCubeRef] = useState();
   const [planeRef, setPlaneRef] = useState();
   const radian = Math.PI / 180;
-  const windowHeight = window.innerHeight
-  const planeCanvas = useRef()
+  const windowHeight = window.innerHeight;
+  const planeCanvas = useRef();
+  const { darkTheme } = useContext(GlobalContext);
 
-  useEffect(() => {
+  useGSAP(() => {
+    const img = document.querySelector(".portfolio-img");
+
     gsap.to(".portfolio-img", {
       y: 0,
       duration: 1,
@@ -24,136 +33,231 @@ const Portfolio = ({ isMobile }) => {
       opacity: 1,
     });
 
+    gsap.to(".expert", {
+      scale: 1,
+      y: 0,
+      x: 0,
+      scrollTrigger: {
+        trigger: ".portfolio-main",
+        start: "top top",
+        endTrigger: ".portfolio-wrapper",
+        end: "top top",
+        scrub: 0,
+      },
+    });
+
+    ////////////////////////////////
+    // horizontal scroll
+    ///////////////////////////////
+
     gsap.to(".portfolio-wrapper", {
-      x: `${isMobile ? "-150vw" : "-100vw"}`,
-      scrub: 1,
+      x: `${isMobile ? "-30vw" : "-50vw"}`,
       scrollTrigger: {
         trigger: ".portfolio-wrapper",
         start: "top top",
-        end: `+=${isMobile ? window.innerWidth * 1.5 : window.innerWidth * 1.5}`,
+        end: `+=${isMobile ? window.innerWidth*0.5 : window.innerWidth * 1}`,
         pin: true,
         scrub: 0.2,
       },
     });
+
+    gsap.to(".box-2", {
+      y: 0,
+      scrollTrigger: {
+        trigger: ".portfolio-section2",
+        start: "top -20%",
+        end: "top -20%",
+        scrub: 1,
+        // markers: true
+      },
+    });
   }, []);
 
-  useEffect(() => {
+  ////////////////////////////////
+  // expert text
+  ///////////////////////////////
+
+  useGSAP(() => {
+    gsap.to(".expert", {
+      color: "rgba(161,196,253, 1)",
+      scrollTrigger: {
+        trigger: ".portfolio-main",
+        start: "top top",
+        endTrigger: ".portfolio-wrapper",
+        end: "top top",
+        scrub: 1,
+      },
+    });
+  }, [darkTheme]);
+
+  // ---------------------
+  // cube-animation
+  // ----------------------
+
+  useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".portfolio-section2",
-        start: `${isMobile ? "left left" : "bottom top"}`,
-        end: `+=${window.innerWidth}`,
+        start: "top -40%",
+        end: "+=400",
         scrub: 1,
-        // markers:true
+        // markers: true,
       },
     });
 
-    tl.to(".cube-model", {
-      x: 0,
-      y: 0,
-      opacity: 1,
-    });
+    tl.to('.box-3', {
+      scale : 1,
+      x : '20vw'
+    })
 
-    if (cubeRef) {
-      tl.to(
-        cubeRef.current.rotation,
-        {
-          x: 0,
-          y: radian * 360,
-          z: radian * 360,
-        },
-        0
-      );
-    }
-  }, [cubeRef])
+    // tl.to(".cube-model", {
+    //   x: "20vw",
+    //   opacity:1,
+    // })
 
-  //? --------------------- plane -animation
-  useEffect(() => {
+    // if (cubeRef) {
+    //   tl.to(
+    //     cubeRef.current.rotation,
+    //     {
+    //       x: radian * 360,
+    //       y: 0,
+    //       z: 0,
+    //     },
+    //     0
+    //   );
+
+    //   tl.to(
+    //     cubeRef.current.position,
+    //     {
+    //       x: -2,
+    //       y:-2,
+    //       z:0
+    //     },
+    //     0
+    //   );
+    // }
+  }, [cubeRef]);
+
+  // ---------------------
+  // plane -animation
+  // ----------------------
+  useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".portfolio-wrapper",
         start: `${isMobile ? "left left" : "top bottom"}`,
         end: `+=${windowHeight}`,
         scrub: 1,
-      }
+      },
     });
 
     tl.to(".plane-model", {
       x: 0,
+      y:'-20vh'
     });
 
     if (planeRef) {
       tl.to(
         planeRef.current.rotation,
         {
-          y: radian * (80),
+          x:0,
+          y: radian * 80,
           z: 0,
         },
         0
-      )
-
-      // tl.to(planeCanvas.current.fov, {
-        
-      // })
+      );
     }
   }, [cubeRef]);
 
-
   return (
-    <div className="portfolio-main">
-      <div className="portfolio d-flex justify-content-around align-items-center">
-        <div className="portfolio-left d-flex ps-2 ">
-          <div className="portfolio-desc d-flex flex-column ">
-            <div className="desc-1" id="portfolio-desc" data-text="Hi i'm">
-              Hi i'm <span className="name">Lokesh</span>
-            </div>
-            <div
-              className="desc-2"
-              id="portfolio-desc"
-              data-text="A full stack"
-            >
-              A full stack
-            </div>
-            <div
-              className="desc-3"
-              id="portfolio-desc"
-              data-text="Web Devoloper."
-            >
-              Web Devoloper.
+    <div
+      className={`portfolio-main ${
+        darkTheme ? "dark-theme-bg" : "light-theme-bg"
+      } `}
+    >
+      <section className="portfolio d-flex">
+        <div className="portfolio-section d-flex justify-content-around align-items-center">
+          <div className="portfolio-left d-flex ps-2 ">
+            <div className={` portfolio-desc d-flex flex-column `}>
+              <div
+                className={`${
+                  darkTheme ? "dark-theme-stroke" : "light-theme-stroke"
+                } desc-1`}
+                id="portfolio-desc"
+                data-text="Hi i'm"
+              >
+                Hi i'm <span className="name">Lokesh</span>
+              </div>
+              <div
+                className={`${
+                  darkTheme ? "dark-theme-stroke" : "light-theme-stroke"
+                } desc-2`}
+                id="portfolio-desc"
+                data-text="A full stack"
+              >
+                A full stack
+              </div>
+              <div
+                className={`${
+                  darkTheme ? "dark-theme-stroke" : "light-theme-stroke"
+                } desc-3`}
+                id="portfolio-desc"
+                data-text="Web Devoloper."
+              >
+                Web Devoloper.
+              </div>
             </div>
           </div>
+          <div
+            className={`portfolio-mid pe-2 portfolio-img d-flex justify-content-center align-items-center`}
+            id="portfolio-img"
+          >
+            <img
+              className={darkTheme ? "dark-theme-border" : "light-theme-border"}
+              src="images/portfolio1.png"
+              alt=""
+            />
+          </div>
         </div>
-        <div
-          className="portfolio-right pe-2 portfolio-img d-flex justify-content-center align-items-center"
-          id="portfolio-img"
-        >
-          <img src="portfolio1.png" alt="" />
-        </div>
-      </div>
+        <div className="portfolio-right">{/* <ContactForm /> */}</div>
+      </section>
 
-      {/* <div className="portfolio-wrapper d-flex">
-        <div className="portfolio-section2 d-flex flex-column justify-content-center align-items-center">
-          <div className="plane-model">
-          <Canvas camera={{ fov: 20, position: [0, 0, 5] }}>
+      <section className="portfolio-wrapper d-flex">
+        <div className="portfolio-section2 position-relative d-flex flex-column justify-content-center align-items-center ">
+          {/* <div className="plane-model position-fixed">
+            <Canvas camera={{ fov: 20, position: [0, 0, 5] }}>
               <ambientLight intensity={2} />
               <PlaneModel setPlaneRef={setPlaneRef} />
             </Canvas>
+          </div> */}
+          <div
+            id="target"
+            // className={`${
+            //   darkTheme ? "dark-theme-text" : "light-theme-text"
+            // } expert text-center`}
+            className="expert text-center"
+          >
+            An Expert in web ani<span className="text-m">m</span>ations
           </div>
-          <div className="expert">An Expert in web animations</div>
         </div>
 
-        <div className="portfolio-section3 d-flex justify-content-center align-items-center">
-          <div className="cube-model">
-            <Canvas ref={planeCanvas} camera={{ fov: 60, position: [0, 3, 25] }}>
+        <div className="portfolio-section3 px-md-5 position-relative d-flex align-items-center">
+          <div className="box-2 p-5 justify-content-center align-items-center">2D</div>
+          {/* <div className="cube-model position-absolute">
+            <Canvas
+              ref={planeCanvas}
+              camera={{ fov: 60, position: [0, 3, 15] }}
+            >
               <ambientLight intensity={2} />
               <directionalLight position={[0, 3, 10]} />
               <RubiksCubeModel setCubeRef={setCubeRef} />
             </Canvas>
-          </div>
-          <div>3D</div>
+          </div> */}
+          <div className="box-3 p-5 position-absolute justify-content-center align-items-center">3D</div>
+          
         </div>
 
-        <div className="portfolio-section4 d-flex flex-column justify-content-center align-items-center">
+        {/* <div className="portfolio-section4 d-flex flex-column justify-content-center align-items-center">
           <div className="">4D???</div>
           <div className="model-2">
             <Canvas camera={{ fov: 60, position: [0, 3, 60] }}>
@@ -163,8 +267,8 @@ const Portfolio = ({ isMobile }) => {
               <TeseractModel />
             </Canvas>
           </div>
-        </div>
-      </div> */}
+        </div> */}
+      </section>
     </div>
   );
 };

@@ -1,166 +1,131 @@
 .portfolio-main{
     width: 100vw;
     overflow-x: hidden;
+    transition: .5s ease;
 }
 
 .portfolio-wrapper{
-    width: 150vw;
+    width: 200vw;
 }
 
 .portfolio-wrapper::-webkit-scrollbar{
     width: 0px;
 }
 
+/* //////////////////////////////// */
+/*  portfolio section1
+/* /////////////////////////////// */
+
 .portfolio{
-    height: 90vh;
+    height: 100vh;
     transition: .5s ease;
-    width: 100vw;
+    width: 150vw;
 }
 
-.portfolio-section2, .portfolio-section3, .portfolio-section4{
+.portfolio-section{
     width: 100vw;
-    font-size: 70px;
-    height: 90vh;
 }
-.portfolio-section3{
-    width: 20vw;
-}
-.portfolio-section4{
-    width: 30vw;
+.portfolio-img{
+    transform: translateY(-500px);
+    opacity: 0;
 }
 
-.cube-model{
-    height: 500px;
-    width: 500px;
-    transform: translate(-100vw, 60vh);
+.portfolio-mid img{
+    height: 400px;
+    border-radius: 50%;
+    z-index: 100;
 }
 
 #portfolio-desc{
     text-transform: uppercase;
     position: relative;
     color: transparent;
-    -webkit-text-stroke: 1px #212529;
     font-size: 70px;
     font-weight: 700;
     transition: .5s ease;
 }
-
 .portfolio-desc:hover{
     cursor:default;
 }
-
 #portfolio-desc::before{
     content: attr(data-text);
     width: 0;
-    left: 0;
+    /* left: 0; */
     position: absolute;
-    color: #212529;
     overflow: hidden;
     transition:all .3s ease-out;
     z-index: 10;
     white-space: nowrap;
 }
-
 #portfolio-desc:hover::before{
     width: 100%;
     transition:all .5s linear;
 }
-
 .name{
     color: rgb(73, 183, 223);
-    color: rgba(194,233,251, 1);
     color: rgba(161,196,253, 1);
     -webkit-text-stroke: 0px;
 }
-
 .name::before{
     color: rgb(73, 183, 223);
-    color: rgba(194,233,251, 1);
     color: rgba(161,196,253, 1);
     z-index: 20;
 }
+/* //////////////////////////////// */
+/*  portfolio section2
+/* /////////////////////////////// */
 
-.portfolio-img{
-    transform: translateY(-500px);
-    /* transition: .5s ease; */
-    opacity: 0;
+.portfolio-section2{
+    width: 100vw;
+    height: 100vh;
+}
+.expert{
+    text-transform: uppercase;
+    font-size: 100px;
+    font-size: 6vw;
+    font-weight: 800;
+    width: 100vw;
+    white-space: nowrap;
+    transform: translate(0px, -110vh);
+    scale: 0.5;
+    color: rgb(73, 183, 223);
 }
 
-.portfolio-right img{
-    height: 400px;
-    border-radius: 50%;
-    border-radius: 50%;
-    border: 3px solid #212529;
-    z-index: 100;
-}
+/* //////////////////////////////// */
+/*  portfolio section3 
+/* /////////////////////////////// */
 
 .model-2{
     height: 400px;
     width: 400px;
 }
-
 .plane-model{
-    transform: translate(-50vw, -30vh);
+    transform: translate(-50vw, -50vh);
 }
-
-/* -----------media query------------ */
-
-@media screen and (max-width:1500px) and (min-width:1100px) {
-    .portfolio-desc{
-        font-size:50px;
-        transition: .5s ease;
-    }
-    .portfolio-img img{
-        height: 300px;
-        transition: .5s ease;
-    }
+.portfolio-section3{
+    width: 100%;
+    height: 100%;
 }
-
-@media screen and (max-width:1100px) and (min-width:769px) {
-    .portfolio-desc{
-        font-size:50px;
-        transition: .5s ease;
-    }
-    .portfolio-img img{
-        height: 300px;
-        transition: .5s ease;
-    }
-    .portfolio{
-        display: flex !important;
-        flex-direction: column !important;
-        transition: .5s ease;
-        justify-content: space-evenly !important;
-    }
+.box-2, .box-3{
+    background-color: aquamarine;
+    transform: translateY(-100vh);
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 100;
+    font-size: 6vw;
+    font-weight: 800;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-@media screen and (max-width:768px) {
-    #portfolio-desc{
-        font-size:42px;
-        transition: .5s ease;
-        /* color: black !important; */
-    }
-    .portfolio-img img{
-        height: 250px;
-        transition: .5s ease;
-    }
-    .portfolio{
-        display: flex !important;
-        flex-direction: column !important;
-        transition: .5s ease;
-        justify-content: space-evenly !important;
-    }
-    .cube-model{
-    transform: translate(0vw, -60vh);
+.cube-model{
+    height: 300px;
+    width: 300px;
+    z-index: 90;
     opacity: 0;
-    }
-    .portfolio-section3, .portfolio-section4{
-        width: 100vw;
-    }
-    .portfolio-wrapper{
-        width: 400vw;
-    }
-    .portfolio-section3{
-        flex-direction: column !important;
-    }
-
+}
+.box-3{
+    scale: 0;
+    background-color: beige;
+    z-index: 90;
 }
