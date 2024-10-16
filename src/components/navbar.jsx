@@ -10,7 +10,7 @@ const Navbar = ({isMobile, isTablet}) => {
 
     gsap.registerPlugin(Observer)
     const {darkTheme, setDarkTheme} = useContext(GlobalContext)
-    console.log(darkTheme)
+    // console.log(darkTheme)
     const [handleView, setHandleView] = useState('portfolio')
 
     useGSAP(() => {
@@ -73,6 +73,16 @@ const Navbar = ({isMobile, isTablet}) => {
         setDarkTheme(!darkTheme)
     }
 
+    useEffect(()=>{
+        const cachedTheme = localStorage.getItem('darkTheme')
+        if(cachedTheme){
+            setDarkTheme(JSON.parse(cachedTheme))
+        }
+    }, [setDarkTheme])
+
+    useEffect(()=>{
+        localStorage.setItem('darkTheme', JSON.stringify(darkTheme))
+    }, [darkTheme])
 
     useEffect(() => {
         const element = document.querySelector(`#${handleView}`);
