@@ -32,27 +32,27 @@ function Projects() {
 
     const pinnedSections = gsap.utils.toArray(".pinned");
 
-    // pinnedSections.forEach((section, index, sections) => {
-    //   gsap.to(section, {
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       start: "top 15%",
-    //       end: `+=${(window.innerHeight*0.8)* (sections.length - index)}`,
-    //       pin: true,
-    //       scrub: 1,
-    //     },
-    //   });
+    pinnedSections.forEach((section, index, sections) => {
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 15%",
+          end: `+=${(window.innerHeight*0.8)* (sections.length - index)}`,
+          pin: true,
+          scrub: 1,
+        },
+      });
 
-    //   gsap.to(section, {
-    //     scale: 0.5,
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       start: "top 15%",
-    //       end: `+=400`,
-    //       scrub: 1,
-    //     },
-    //   });
-    // });
+      gsap.to(section, {
+        scale: 0.5,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 15%",
+          end: `+=400`,
+          scrub: 1,
+        },
+      });
+    });
 
     // function responsive() {
     //   if (window.innerWidth < 600) {
@@ -90,8 +90,8 @@ function Projects() {
         </div>
 
         {projectsList?.map((data, index) => (
-          <div key={index} className={`${projectsList.length-1 === index ? 'scroll' : 'pinned'} ${darkTheme?'dark-theme-bg':'light-theme-bg'} project-wrapper d-flex justify-content-center`}>
-            <div className={` ${darkTheme?'dark-theme-bg dark-theme-text light-theme-shadow dark-theme-gradient ':'light-theme-bg light-theme-text light-theme-shadow light-theme-gradient'} project-card gap-3 d-flex project-${index+1} p-3 mb-5`}>
+          <div key={index} className={`${projectsList.length-1 === index ? 'scroll' : 'pinned'} ${darkTheme?'dark-theme-bg':'light-theme-bg'} project-wrapper d-flex flex-column align-items-center justify-content-center`}>
+            <div className={` ${darkTheme?'dark-theme-bg dark-theme-text light-theme-shadow dark-theme-gradient ':'light-theme-bg light-theme-text light-theme-shadow light-theme-gradient'} project-card gap-3 d-flex project-${index+1} p-3`}>
               <div className="project-left d-flex flex-column justify-content-between">
                 <div className="left-top p-3">
                   <div className="project-name pb-4">{data.name}</div>
@@ -118,6 +118,7 @@ function Projects() {
                 </Link>
               </div>
             </div>
+            { projectsList.length-1 !== index && <div style={{width:'100%'}} className={`${darkTheme?'dark-theme-bg':'light-theme-bg'} pb-5`} ></div> }
           </div>
         ))}
 
