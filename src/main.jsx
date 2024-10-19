@@ -4,8 +4,8 @@ import App from './App.jsx'
 import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
  
-// injectSpeedInsights();
-// inject();
+injectSpeedInsights();
+inject();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
