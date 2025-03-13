@@ -8,7 +8,7 @@ import "../css/home.css";
 const Home = ({ isMobile }) => {
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/analytics/track")
+    fetch("https://portfoliobackend-sigma.vercel.app/api/analytics/track")
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, []);
