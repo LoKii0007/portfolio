@@ -1,51 +1,78 @@
 export const projectsList = [
-    {
-        name: 'FoTF',
-        link: 'https://fotf-frontend.vercel.app', 
-        mobileImage: "images/fotf-600.jpg", 
-        desktopImage: 'images/fotf.png',
-        points : [
-            'Devoloped a rersponsive animated website.', 
-            'Tech - React.js, GSAP,Bootstrap, Html, CSS'
-        ]
-    },
-    // {
-    //     name: 'ydmc',
-    //     link: 'https://ydmc.vercel.app', 
-    //     mobileImage: "images/ydmc-600.jpg", 
-    //     desktopImage: 'images/ydmc.png',
-    //     points : [
-    //         'one', 'two', 'three'
-    //     ]
-    // },
-    {
-        name: 'WeChat',
-        link: 'https://we-chat-frontend-opal.vercel.app', 
-        mobileImage: "images/wechat-600.jpg", 
-        desktopImage: 'images/wechat.png',
-        points : [
-            'A real time chat applpication.',
-            'Tech - React.js, Express.js, MongoDb, Node.js, Websocket, Google OAuth, Bootstrap'
-        ]
-    },
-    {
-        name: 'Xr central',
-        link: 'https://login-auth-54c3e.web.app/', 
-        mobileImage: "images/xrc-600.jpg", 
-        desktopImage: 'images/xrc.png',
-        points : [
-            'A Real time quiz application.',
-            'Tech - React.js, Express.js, MongoDb, Node.js, Firebase, Socket.io'
-        ]
-    },
-    {
-        name: 'Savor Heaven',
-        link: 'https://savor-haven.vercel.app', 
-        mobileImage: "images/savor-600.png", 
-        desktopImage: 'images/savor.png',
-        points : [
-            'E-commerce web application,',
-            'Tech - React.js, Express.js, MongoDb, Node.js, Stripe'
-        ]
-    }
-]
+  {
+    name: "FoTF",
+    link: "https://fotf-frontend.vercel.app",
+    mobileImage: "images/fotf-600.jpg",
+    desktopImage: "images/fotf.png",
+    points: [
+      "Developed a fully responsive animated website with smooth transitions and micro-interactions.",
+      "Implemented optimized animations using GSAP for a seamless user experience.",
+      "Ensured cross-browser compatibility and mobile-friendly design.",
+      "Tech - React.js, GSAP, Bootstrap, HTML, CSS",
+    ],
+  },
+  {
+    name: "Propped Up",
+    link: "https://propped-up-testing.vercel.app/",
+    mobileImage: "images/propped-600.png",
+    desktopImage: "images/propped.png",
+    points: [
+      "A platform for ordering customizable signboards with seamless online transactions.",
+      "Integrated Google Sheets API for automated order tracking and management.",
+      "Admin Panel: Manage orders, track payments, and update order status.",
+      "Admin Link - https://propped-up-testing.vercel.app/admin.",
+      "Test Credentials: Email - lokesh@marqueascendia.com | Password - testing123@",
+      "Tech - React.js, Express.js, MongoDB, Node.js, Stripe, Tailwind CSS, Google Auth, Google Sheets API",
+    ],
+  },
+  {
+    name: "WeChat",
+    link: "https://we-chat-frontend-opal.vercel.app",
+    mobileImage: "images/wechat-600.jpg",
+    desktopImage: "images/wechat.png",
+    points: [
+      "A real-time chat application with instant messaging and secure authentication.",
+      "Integrated WebSocket for seamless bi-directional communication.",
+      "Implemented Google OAuth for easy and secure user authentication.",
+      "Designed a clean and intuitive UI for better user experience.",
+      "Tech - React.js, Express.js, MongoDB, Node.js, WebSocket, Google OAuth, Bootstrap",
+    ],
+  },
+  {
+    name: "Xr Central",
+    link: "https://login-auth-54c3e.web.app/",
+    mobileImage: "images/xrc-600.jpg",
+    desktopImage: "images/xrc.png",
+    points: [
+      "A real-time quiz application with interactive questions and live score updates.",
+      "Used Firebase for authentication and real-time database functionality.",
+      "Integrated WebSockets for live multiplayer quiz sessions.",
+      "Tech - React.js, Express.js, MongoDB, Node.js, Firebase, Socket.io, Tailwind CSS",
+    ],
+  },
+  {
+    name: "Savor Heaven",
+    link: "https://savor-haven.vercel.app",
+    mobileImage: "images/savor-600.png",
+    desktopImage: "images/savor.png",
+    points: [
+      "A feature-rich e-commerce web application with seamless checkout and secure payments.",
+      "Implemented a fully functional shopping cart with real-time updates.",
+      "Integrated Stripe for secure online transactions.",
+      "Designed a modern and user-friendly UI for a smooth shopping experience.",
+      "Tech - React.js, Express.js, MongoDB, Node.js, Stripe, Tailwind CSS",
+    ],
+  },
+  {
+    name: "Captionizer",
+    link: "https://captionizer-star.vercel.app/",
+    mobileImage: "images/captionizer-600.png",
+    desktopImage: "images/image.png",
+    points: [
+      "caption generator for images with real-time text recognition.",
+      "Utilized Machine Learning APIs to generate contextually relevant captions.",
+      "Designed an intuitive interface for uploading and processing images efficiently.",
+      "Tech - Next.js, MongoDB, tailwind css, AWS s3 bucket",
+    ],
+  },
+];
