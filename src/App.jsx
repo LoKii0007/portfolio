@@ -20,8 +20,6 @@ function App() {
   );
   const [isLoaded, setIsLoaded] = useState(true);
 
-  const assets = ["/docker.png", "/express.png", "/docker.png"];
-
   const handleLoadingComplete = () => {
     setIsLoaded(true);
   };
