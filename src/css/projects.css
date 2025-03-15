@@ -56,7 +56,7 @@
 }
 
 .project-desc {
-    font-size: medium;
+    font-size: 14px;
 }
 
 .project-button {
@@ -114,3 +114,12 @@
 .main-bottom {
     padding: 40px 12px;
 }
+
+.button-left{
+    text-decoration: none !important;
+}
+@media screen and (max-width:800px) {
+    .project-desc{
+        font-size: 11px;
+    }
+  }

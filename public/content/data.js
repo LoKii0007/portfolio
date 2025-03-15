@@ -17,8 +17,7 @@ export const projectsList = [
     mobileImage: "images/propped-600.png",
     desktopImage: "images/propped.png",
     points: [
-      "A platform for ordering customizable signboards with seamless online transactions.",
-      "Integrated Google Sheets API for automated order tracking and management.",
+      "A platform for ordering signboards with seamless online transactions.",
       "Admin Panel: Manage orders, track payments, and update order status.",
       "Admin Link - https://propped-up-testing.vercel.app/admin.",
       "Test Credentials: Email - lokesh@marqueascendia.com | Password - testing123@",
