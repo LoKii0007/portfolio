@@ -130,8 +130,8 @@ function Projects() {
                     ))}
                   </div>
                 </div>
-                <Link target="_blank" to={data.link} className="button-left">
-                  <button className="project-button rounded-pill d-flex justify-content-between align-items-center p-3 border-0">
+                <Link target="_blank" to={data.link} className={`button-left`}>
+                  <button className={`${darkTheme ? 'dark-theme-bg dark-theme-text' : 'light-theme-bg light-theme-text'} project-button rounded-pill d-flex justify-content-between align-items-center p-3 border-0`}>
                     <div className="button-left">Open case</div>
                     <div className="button-right">
                       <svg
