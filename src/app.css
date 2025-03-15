@@ -1,4 +1,4 @@
-@media screen and (max-width:578px) {
+@media screen and (max-width:800px) {
 
     /* -----------------------------
     navbar
@@ -8,27 +8,34 @@
         position: fixed;
         /* top: 90dvh; */
     }
+
     .custom-navbar {
         padding: 0px 16px !important;
     }
+
     .navbar-left,
     .navbar-right {
         margin: 0% !important;
     }
-    .navbar-left{
+
+    .navbar-left {
         width: 100%;
         justify-content: space-between !important;
         flex-direction: row-reverse !important;
     }
-    .loki{
+
+    .loki {
         display: block !important;
     }
+
     .menu-item {
         font-size: 24px !important;
     }
+
     .nav-item {
         display: none;
     }
+
     .menu {
         display: block;
         color: white;
@@ -42,7 +49,7 @@
     portfolio
     ----------------------------- */
 
-    .portfolio-section{
+    .portfolio-section {
         flex-direction: column-reverse !important;
         /* justify-content: space-around !important; */
         justify-content: center !important;
@@ -50,24 +57,30 @@
         height: 100svh;
         padding: 0% !important;
     }
-    #portfolio-desc{
+
+    #portfolio-desc {
         font-size: 32px !important;
-        text-align: center !important ;
+        text-align: center !important;
     }
-    #portfolio-desc:hover::before{
+
+    #portfolio-desc:hover::before {
         width: 0px !important;
     }
-    .portfolio{
+
+    .portfolio {
         width: 100vw;
     }
+
     .portfolio-img img {
         height: 250px;
         transition: .5s ease;
     }
-    .expert{
+
+    .expert {
         transform: translateY(-120vh);
     }
-    .portfolio-wrapper{
+
+    .portfolio-wrapper {
         display: none !important;
     }
 
@@ -79,6 +92,7 @@
     .project-img {
         width: 100%;
     }
+
     .project-card::before {
         content: '';
         position: absolute;
@@ -91,38 +105,47 @@
         border-radius: 0px;
         box-shadow: none;
     }
+
     .project-card:hover::before {
         opacity: 1;
     }
+
     .project-card {
         /* height: 60vh; */
         width: 92vw;
         flex-direction: column-reverse !important;
     }
+
     .project-left {
         width: 100%;
     }
+
     .main-middle {
         font-size: 40px;
         font-weight: 700;
         line-height: 30px;
         padding: 0px 8px;
     }
+
     .main-left,
     .main-right,
     .main-bottom {
         font-size: 6px;
         font-weight: 400;
     }
+
     .work-project {
         height: 70vh;
     }
+
     .main-bottom {
         padding: 20px 12px;
     }
+
     .left-top {
         padding: 16px 8px !important;
     }
+
     .project-name {
         padding-bottom: 4px !important;
     }
@@ -132,36 +155,42 @@
     contact
     ----------------------------- */
 
-    .contact-right{
+    .contact-right {
         display: none !important;
     }
-    .contact{
+
+    .contact {
         padding-left: 0% !important;
         padding-right: 32px !important;
         border-top-left-radius: 0% !important;
         border-bottom-left-radius: 0% !important;
     }
-    .contact-left{
+
+    .contact-left {
         width: 100%;
-        padding:0px 20px !important;
+        padding: 0px 20px !important;
         border-top-left-radius: 0% !important;
         border-bottom-left-radius: 0% !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        border-right:2px solid rgb(73, 183, 223) ;
+        border-right: 2px solid rgb(73, 183, 223);
     }
-    .mobile-model{
+
+    .mobile-model {
         display: block !important;
         top: 16px !important;
         width: 100%;
     }
-    .contact-top{
+
+    .contact-top {
         margin-top: 0px !important;
     }
-    .contact-top, .contact-bottom{
-        width: 100% ;
+
+    .contact-top,
+    .contact-bottom {
+        width: 100%;
     }
 
 }
@@ -211,6 +240,6 @@
     /* -----------------------------
     portfolio
     ----------------------------- */
-    
+
 
 }
