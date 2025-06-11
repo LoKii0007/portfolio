@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../css/projects.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
-import { projectsList } from "../../public/content/data";
+import { projectsList } from "../constants/projectData";
 import { useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
 
 function Projects() {
   gsap.registerPlugin(ScrollTrigger);
-  const [img, setImg] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
   const { darkTheme } = useContext(GlobalContext);
@@ -131,7 +130,13 @@ function Projects() {
                   </div>
                 </div>
                 <Link target="_blank" to={data.link} className={`button-left`}>
-                  <button className={`${darkTheme ? 'dark-theme-bg dark-theme-text' : 'light-theme-bg light-theme-text'} project-button rounded-pill d-flex justify-content-between align-items-center p-3 border-0`}>
+                  <button
+                    className={`${
+                      darkTheme
+                        ? "dark-theme-bg dark-theme-text"
+                        : "light-theme-bg light-theme-text"
+                    } project-button rounded-pill d-flex justify-content-between align-items-center p-3 border-0`}
+                  >
                     <div className="button-left">Open case</div>
                     <div className="button-right">
                       <svg
@@ -155,7 +160,7 @@ function Projects() {
                 <Link to={data.link} target="blank">
                   <img
                     className="img project-img"
-                    src={`/${img ? data.mobileImage : data.desktopImage}`}
+                    src={`/${data.desktopImage}`}
                     alt="image"
                   />
                 </Link>

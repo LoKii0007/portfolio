@@ -18,11 +18,6 @@ function App() {
   const [isTablet, setIsTablet] = useState(
     window.innerWidth >= 578 && window.innerWidth < 768
   );
-  const [isLoaded, setIsLoaded] = useState(true);
-
-  const handleLoadingComplete = () => {
-    setIsLoaded(true);
-  };
 
   function responsive() {
     if (window.innerWidth < 578) setIsMobile(true);
@@ -60,7 +55,6 @@ function App() {
 
   return (
     <>
-      {/* {isLoaded ? ( */}
       <GlobalContextProvider>
         <Router>
           <Navbar isMobile={isMobile} isTablet={isTablet} />
@@ -74,9 +68,6 @@ function App() {
           <Toaster />
         </Router>
       </GlobalContextProvider>
-      {/* ) : (
-        <Preloader assets={assets} onLoadingComplete={handleLoadingComplete} />
-      )} */}
     </>
   );
 }
