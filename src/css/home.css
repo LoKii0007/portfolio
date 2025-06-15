@@ -50,3 +50,12 @@ body {
   transition: transform 0.15s ease;
   backdrop-filter: blur(2px);
 }
+
+@media screen and (max-width: 800px) {
+  .cursor {
+    display: none;
+  }
+  .cursor-follower {
+    display: none;
+  }
+}

@@ -75,9 +75,7 @@
     font-weight: 700;
     transition: .5s ease;
 }
-.portfolio-desc:hover{
-    cursor:default;
-}
+
 #portfolio-desc::before{
     content: attr(data-text);
     width: 0;

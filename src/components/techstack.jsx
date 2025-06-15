@@ -101,7 +101,7 @@ function TechStack() {
               <div className="grafana dev ">
                 <img className="icon-img" src="/images/grafana.png" alt="" />
               </div>
-              <SkillBtn name="Scaling" />
+              <SkillBtn name="Solidity" />
             </div>
           </div>
         </div>
