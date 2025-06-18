@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import "../css/projects.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import { projectsList } from "../constants/projectData";
 import { useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
+import { gsap} from "../hooks/gsapSetup";
+
 
 function Projects() {
-  gsap.registerPlugin(ScrollTrigger);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
   const { darkTheme } = useContext(GlobalContext);

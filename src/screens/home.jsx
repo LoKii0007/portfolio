@@ -6,11 +6,19 @@ import ContactForm from "../components/contact";
 import "../css/home.css";
 
 const Home = ({ isMobile }) => {
-  useEffect(() => {
-    fetch("https://portfoliobackend-sigma.vercel.app/api/analytics/track")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+  async function handleAnalytics() {
+    try {
+      await fetch(
+        "https://portfoliobackend-sigma.vercel.app/api/analytics/track"
+      );
+    } catch (error) {}
+  }
 
+  useEffect(() => {
+    handleAnalytics();
+  }, []);
+
+  useEffect(() => {
     const cursor = document.querySelector(".cursor");
     const cursorFollower = document.querySelector(".cursor-follower");
 

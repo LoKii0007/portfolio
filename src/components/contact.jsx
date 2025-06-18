@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "../css/contact.css";
 import { Canvas } from "@react-three/fiber";
 import { Keyboard } from "../models/Keyboard";
@@ -32,7 +32,7 @@ export default function ContactForm() {
 
     typingTimeoutRef.current = setTimeout(() => {
       setIsTyping(false);
-    }, 500);
+    }, 300);
   }
 
   useState(() => {

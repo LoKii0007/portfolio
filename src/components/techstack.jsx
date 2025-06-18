@@ -1,12 +1,11 @@
-import { ScrollTrigger } from "gsap/all";
 import "../css/techstack.css";
-import gsap from "gsap";
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/globalContext";
 import SkillBtn from "./skillBtn";
+import { gsap } from "../hooks/gsapSetup";
+
 
 function TechStack() {
-  gsap.registerPlugin(ScrollTrigger);
   const { darkTheme } = useContext(GlobalContext);
 
   useEffect(() => {

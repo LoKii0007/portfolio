@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function Keyboard(props) {
@@ -10,6 +10,7 @@ export function Keyboard(props) {
   function playAnimation() {
     Object.keys(actions).forEach((key) => {
       actions[key].paused = false;
+      actions[key].timeScale = 2;
       actions[key].play()
     })
   }
@@ -17,7 +18,6 @@ export function Keyboard(props) {
   function pauseAnimation() {
     Object.keys(actions).forEach((key) => {
       actions[key].paused = true
-      // actions[key].stop()
     })
   }
 

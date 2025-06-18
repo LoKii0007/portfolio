@@ -19,8 +19,6 @@ export const projectsList = [
     points: [
       "A platform for ordering signboards with seamless online transactions.",
       "Admin Panel: Manage orders, track payments, and update order status.",
-      "Admin Link - https://propped-up-testing.vercel.app/admin.",
-      "Test Credentials: Email - lokesh@marqueascendia.com | Password - testing123@",
       "Tech - React.js, Express.js, MongoDB, Node.js, Stripe, Tailwind CSS, Google Auth, Google Sheets API",
     ],
   },

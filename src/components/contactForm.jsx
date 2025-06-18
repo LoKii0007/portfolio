@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "../css/contact.css";
 import "../css/contactForm.css";
 import toast from "react-hot-toast";

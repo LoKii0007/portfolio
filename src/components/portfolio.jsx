@@ -1,13 +1,10 @@
-import gsap from "gsap";
 import "../css/portfolio.css";
-import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { useContext } from "react";
 import { GlobalContext } from "../context/globalContext";
-import ContactForm from "./contactForm";
+import { gsap } from "../hooks/gsapSetup";
 
 const Portfolio = ({ isMobile }) => {
-  gsap.registerPlugin(ScrollTrigger);
   const { darkTheme } = useContext(GlobalContext);
 
   useGSAP(() => {
@@ -101,7 +98,7 @@ const Portfolio = ({ isMobile }) => {
       <section className="portfolio d-flex relative ">
         <div className="portfolio-section d-flex justify-content-around align-items-center w-[100vw]">
           <div className="portfolio-left d-flex ps-2 ">
-            <div className={` portfolio-desc d-flex flex-column `}>
+            <div className={` portfolio-desc bowl d-flex flex-column `}>
               <div
                 className={`${
                   darkTheme ? "dark-theme-stroke" : "light-theme-stroke"

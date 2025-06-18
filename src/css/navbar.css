@@ -4,6 +4,11 @@ nav{
     top : 16px;
     transition: .5s ease;
 }
+
+.nav-pos{
+    transform: translateY(-72px);
+}
+
 .custom-navbar{
     height: 56px;
     width: 60px;
