@@ -1,0 +1,64 @@
+.word{
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    font-size: 210px;
+    font-weight: 700;
+    line-height: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.word-text{
+    transform: rotate(10deg);
+}
+
+.outer-circle, .middle-circle, .inner-circle{
+    border-radius: 50%;
+    border: 2px solid white;
+    overflow: hidden;
+}
+.outer-circle{
+    width: 45vw;
+    height: 45vw;
+    z-index: 120;
+    transform: rotate(-10deg);
+}
+.middle-circle{
+    width: 30vw;
+    height: 30vw;
+    z-index: 120;
+    transform: rotate(10deg);
+}
+.inner-circle{
+    width: 15vw;
+    height: 15vw;
+    z-index: 130;
+    transform: rotate(-10deg);
+}
+
+/*# ------------------ mdeia queries -----------------------------  */
+
+
+@media screen and (max-width:768px) {
+    .word{
+        font-size: 150px;
+        line-height: 150px;
+        white-space: normal;
+        text-align: center;
+    }
+    .outer-circle, .inner-circle, .middle-circle{
+        width: 100vw;
+        height: 100vw;
+        white-space: normal;
+        text-align: center;
+    }
+    .middle-circle{
+        width: 60vw;
+        height: 60vw;
+    }
+    .inner-circle{
+        width: 30vw;
+        height: 30vw;
+    }
+}

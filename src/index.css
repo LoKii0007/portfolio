@@ -50,6 +50,9 @@ body{
 .light-theme-bg{
   background-color: whitesmoke;
 }
+.light-theme-bg{
+  background-color: white;
+}
 .light-theme-text{
   color: #212529;
 }

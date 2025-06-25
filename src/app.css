@@ -51,7 +51,6 @@
 
     .portfolio-section {
         flex-direction: column-reverse !important;
-        /* justify-content: space-around !important; */
         justify-content: center !important;
         gap: 10vh;
         height: 100svh;
@@ -74,14 +73,6 @@
     .portfolio-img img {
         height: 250px;
         transition: .5s ease;
-    }
-
-    .expert {
-        transform: translateY(-120vh);
-    }
-
-    .portfolio-wrapper {
-        display: none !important;
     }
 
 
