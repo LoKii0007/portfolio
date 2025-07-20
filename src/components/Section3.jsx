@@ -58,7 +58,7 @@ function Section3() {
           className={`${
             darkTheme
               ? "dark-theme-bg-light dark-theme-text"
-              : "light-theme-bg-light light-theme-tex"
+              : "light-theme-bg-light light-theme-text"
           } outer-circle d-flex justify-content-center align-items-center position-absolute`}
         >
           Build clean. <br />
@@ -68,7 +68,7 @@ function Section3() {
           className={`${
             darkTheme
               ? "dark-theme-bg dark-theme-text"
-              : "light-theme-bg light-theme-tex"
+              : "light-theme-bg light-theme-text"
           } middle-circle d-flex justify-content-center align-items-center position-absolute`}
         >
           Build clean. <br />
@@ -78,7 +78,7 @@ function Section3() {
           className={`${
             darkTheme
               ? "dark-theme-bg-light dark-theme-text"
-              : "light-theme-bg-light light-theme-tex"
+              : "light-theme-bg-light light-theme-text"
           } inner-circle d-flex justify-content-center align-items-center position-absolute`}
         >
           Build clean. <br />

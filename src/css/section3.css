@@ -11,6 +11,7 @@
 
 .word-text{
     transform: rotate(10deg);
+    z-index: 100;
 }
 
 .outer-circle, .middle-circle, .inner-circle{
@@ -27,13 +28,13 @@
 .middle-circle{
     width: 30vw;
     height: 30vw;
-    z-index: 120;
+    z-index: 140;
     transform: rotate(10deg);
 }
 .inner-circle{
     width: 15vw;
     height: 15vw;
-    z-index: 130;
+    z-index: 150;
     transform: rotate(-10deg);
 }
 

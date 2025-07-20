@@ -22,6 +22,18 @@ export const projectsList = [
       "Tech - React.js, Express.js, MongoDB, Node.js, Stripe, Tailwind CSS, Google Auth, Google Sheets API",
     ],
   },
+  // {
+  //   name: "Gainz Journal",
+  //   link: "https://gainz-journal.vercel.app",
+  //   mobileImage: "images/gainz-600.png",
+  //   desktopImage: "images/gainz.png",
+  //   points: [
+  //     "A journal app for tracking workouts and progress.",
+  //     "CQRS style architecture.",
+  //     "Designed a clean and intuitive UI for better user experience.",
+  //     "Tech - React.js, Express.js, MongoDB, Node.js, Google OAuth, Tailwind CSS, shadcn/ui, zod, redux, redis",
+  //   ],
+  // },
   {
     name: "WeChat",
     link: "https://we-chat-frontend-opal.vercel.app",
