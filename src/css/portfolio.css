@@ -79,7 +79,6 @@
 #portfolio-desc::before{
     content: attr(data-text);
     width: 0;
-    /* left: 0; */
     position: absolute;
     overflow: hidden;
     transition:all .3s ease-out;
