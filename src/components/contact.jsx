@@ -217,15 +217,19 @@ export default function ContactForm() {
                 <i className="bi bi-phone"></i>
               </div>
               <div className="mobile-info">
-                <b>Phone</b> <br />
-                <a className="link" href="tel:+919560545070">
-                  +91 9560545070
-                </a>
+                <b>Github</b> <br />
+                <Link
+                  className="link"
+                  to="https://github.com/LoKii0007"
+                  target="blank"
+                >
+                  Github
+                </Link>
               </div>
             </div>
             <div className="mobile rounded-4 py-3 d-flex align-items-center">
               <div className="mobile-icon px-4">
-                <i className="bi bi-linkedin"></i>
+                <i className="bi bi-github"></i>
               </div>
               <div className="mobile-info">
                 <b>LinkedIn</b> <br />
@@ -234,7 +238,7 @@ export default function ContactForm() {
                   to="https://www.linkedin.com/in/yadav-lokesh/"
                   target="blank"
                 >
-                  https://www.linkedin.com/in/yadav-lokesh/
+                  Linkedin
                 </Link>
               </div>
             </div>
