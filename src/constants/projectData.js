@@ -23,6 +23,18 @@ export const projectsList = [
     ],
   },
   {
+    name: "Galaxy Generator",
+    link: "https://galaxy-generator-eta.vercel.app/",
+    mobileImage: "images/galaxy.png",
+    desktopImage: "images/galaxy.png",
+    points: [
+      "A dynamic 3D galaxy generator built with Three.js using millions of particles.",
+      "Customizable parameters — adjust galaxy radius, spin, branches, and color gradients in real time.",
+      "Interactive camera controls and GPU-optimized rendering for smooth animations and exploration.",
+      "Tech - Three.js, React.js, Vite",
+    ],
+  },
+  {
     name: "Gainz Journal",
     link: "https://gainz-journal.vercel.app",
     mobileImage: "images/gainz-600.png",
