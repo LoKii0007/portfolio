@@ -214,7 +214,7 @@ export default function ContactForm() {
             </div>
             <div className="mobile rounded-4 py-3 d-flex align-items-center">
               <div className="mobile-icon px-4">
-                <i className="bi bi-phone"></i>
+                <i className="bi bi-github"></i>
               </div>
               <div className="mobile-info">
                 <b>Github</b> <br />
@@ -229,7 +229,7 @@ export default function ContactForm() {
             </div>
             <div className="mobile rounded-4 py-3 d-flex align-items-center">
               <div className="mobile-icon px-4">
-                <i className="bi bi-github"></i>
+                <i className="bi bi-linkedin"></i>
               </div>
               <div className="mobile-info">
                 <b>LinkedIn</b> <br />
